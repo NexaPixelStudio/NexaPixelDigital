@@ -325,7 +325,7 @@
         title: "Panduan Mulai Jualan Baju dari Nol",
         file: "panduan-mulai-jualan-baju-dari-nol.html",
         token: "NEXA-BAJU-49K",
-        checkout: "http://lynk.id/nexapixel.id/xlj97opn79xl/checkout"
+        checkout: "https://lynk.id/nexapixeldigital"
       },
       "kaos-anak": {
         title: "Ebook Produksi Kaos Anak",
@@ -414,7 +414,7 @@
       document.title = "Masukkan Token | " + product.title;
       document.getElementById("productTitle").textContent = product.title;
       document.getElementById("buyButton").href = product.checkout;
-      document.getElementById("backDetailButton").href = "detail-produk.html?produk=" + encodeURIComponent(productSlug);
+      document.getElementById("backDetailButton").href = "checkout.html?produk=" + encodeURIComponent(productSlug);
 
       if (params.get("locked") === "1") {
         document.getElementById("lockedAlert").style.display = "block";
