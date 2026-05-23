@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panduan Mulai Jualan Baju dari Nol untuk UMKM</title>
+  <meta name="description" content="Ebook panduan praktis untuk UMKM yang ingin mulai jualan baju dari nol, mulai dari konsep produk, bahan, pola, konveksi, sablon, modal, harga jual, sampai siap dijual." />
+  <style>
+    :root {
+      --bg: #fff8ef;
+      --paper: #ffffff;
+      --cream: #fff1df;
+      --peach: #ffb27d;
+      --orange: #ff7a3d;
+      --orange-dark: #cc5524;
+      --teal: #3ba99c;
+      --teal-soft: #d9f3ef;
+      --brown: #4a3125;
+      --muted: #74685f;
+      --line: #f0d9c8;
+      --shadow: 0 20px 60px rgba(125, 77, 44, 0.13);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--brown);
+      background:
+        radial-gradient(circle at top left, #ffe1c5 0, transparent 34%),
+        radial-gradient(circle at top right, #d7f4ed 0, transparent 28%),
+        var(--bg);
+      line-height: 1.72;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      line-height: 1.18;
+      color: var(--brown);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      letter-spacing: -0.07em;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      letter-spacing: -0.045em;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 248, 239, 0.86);
+      border-bottom: 1px solid rgba(240, 217, 200, 0.8);
+    }
+
+    .topbar-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--brown);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--orange), var(--peach));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(255, 122, 61, 0.25);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 750;
+      letter-spacing: -0.01em;
+      box-shadow: 0 14px 30px rgba(255, 122, 61, 0.23);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(255, 122, 61, 0.28);
+      background: #f0692d;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--brown);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .btn.secondary:hover {
+      background: #fff;
+      box-shadow: 0 12px 25px rgba(125, 77, 44, 0.08);
+    }
+
+    .hero {
+      padding: 62px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(59, 169, 156, 0.14);
+      color: #247d74;
+      font-size: 0.88rem;
+      font-weight: 760;
+      margin-bottom: 20px;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.08rem, 2.3vw, 1.35rem);
+      color: #6d5748;
+      max-width: 760px;
+      margin: 20px 0 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat .num {
+      font-size: 1.45rem;
+      font-weight: 850;
+      color: var(--orange-dark);
+      letter-spacing: -0.04em;
+    }
+
+    .stat .label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .cover-card {
+      position: relative;
+      min-height: 520px;
+      border-radius: 38px;
+      background:
+        linear-gradient(145deg, #fff 0%, #fff2e5 48%, #dff5f0 100%);
+      border: 1px solid rgba(240, 217, 200, 0.9);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 30px;
+    }
+
+    .cover-card:before,
+    .cover-card:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: 0.72;
+    }
+
+    .cover-card:before {
+      width: 180px;
+      height: 180px;
+      right: -50px;
+      top: -40px;
+      background: #ffb27d;
+    }
+
+    .cover-card:after {
+      width: 250px;
+      height: 250px;
+      left: -90px;
+      bottom: -90px;
+      background: #9ce2d8;
+    }
+
+    .ebook-mockup {
+      position: relative;
+      z-index: 2;
+      width: min(330px, 85%);
+      min-height: 430px;
+      margin: 16px auto;
+      border-radius: 26px;
+      background: linear-gradient(160deg, #ff7a3d, #ffb27d 52%, #fff2e5);
+      box-shadow: 0 28px 70px rgba(88, 46, 24, 0.28);
+      padding: 26px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: rotate(-2deg);
+    }
+
+    .mockup-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      opacity: 0.9;
+    }
+
+    .mockup-title {
+      font-size: 2.35rem;
+      line-height: 1.02;
+      letter-spacing: -0.07em;
+      margin-top: 30px;
+      color: #fff;
+    }
+
+    .mockup-subtitle {
+      color: rgba(255,255,255,0.88);
+      font-size: 0.98rem;
+      margin-top: 14px;
+    }
+
+    .mockup-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .mockup-tags span {
+      border: 1px solid rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.16);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.76rem;
+    }
+
+    .floating-note {
+      position: absolute;
+      z-index: 3;
+      right: 22px;
+      bottom: 34px;
+      width: 190px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 16px;
+      box-shadow: 0 18px 40px rgba(90, 55, 31, 0.14);
+    }
+
+    .floating-note small {
+      color: var(--orange-dark);
+      font-weight: 780;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .section {
+      padding: 38px 0;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(240,217,200,0.92);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 16px 45px rgba(125, 77, 44, 0.07);
+      padding: clamp(22px, 4vw, 42px);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-head p {
+      max-width: 660px;
+      margin-bottom: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      color: var(--orange-dark);
+      padding: 7px 11px;
+      font-weight: 750;
+      font-size: 0.86rem;
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(125, 77, 44, 0.05);
+    }
+
+    .card.accent {
+      background: linear-gradient(145deg, #fff, #fff3e8);
+    }
+
+    .card.teal {
+      background: linear-gradient(145deg, #ffffff, var(--teal-soft));
+    }
+
+    .card h3,
+    .card h4 {
+      color: var(--brown);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--cream);
+      margin-bottom: 12px;
+      color: var(--orange-dark);
+      font-size: 1.25rem;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 13px;
+      border-radius: 18px;
+      color: var(--brown);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .toc a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(125, 77, 44, 0.08);
+    }
+
+    .toc .no {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--cream);
+      color: var(--orange-dark);
+      font-weight: 850;
+    }
+
+    .chapter {
+      scroll-margin-top: 96px;
+    }
+
+    .chapter-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .chapter-badge {
+      position: sticky;
+      top: 96px;
+      border-radius: 26px;
+      background: linear-gradient(160deg, var(--orange), var(--peach));
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0 18px 38px rgba(255, 122, 61, 0.18);
+    }
+
+    .chapter-badge .label {
+      opacity: 0.85;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    .chapter-badge .number {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.07em;
+    }
+
+    .chapter-content {
+      display: grid;
+      gap: 16px;
+    }
+
+    .callout {
+      border-radius: var(--radius-lg);
+      background: #fff9f2;
+      border: 1px solid var(--line);
+      padding: 18px;
+    }
+
+    .callout.tip {
+      background: var(--teal-soft);
+      border-color: #bfe7e0;
+    }
+
+    .callout.warning {
+      background: #fff3df;
+      border-color: #f6c79c;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 32px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .checklist li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 22px;
+      height: 22px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: var(--teal);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .simple-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .simple-list li {
+      margin-bottom: 7px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: #fff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #f3e3d6;
+      text-align: left;
+      vertical-align: top;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: #fff0e2;
+      color: var(--brown);
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .flow-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      min-height: 120px;
+    }
+
+    .flow-step span {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 11px;
+      background: var(--cream);
+      color: var(--orange-dark);
+      font-weight: 850;
+      margin-bottom: 10px;
+    }
+
+    .price-card {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 20px;
+      align-items: center;
+      background:
+        linear-gradient(145deg, #ffffff, #fff0e3 55%, #dff5f0);
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      padding: clamp(22px, 4vw, 38px);
+      box-shadow: var(--shadow);
+    }
+
+    .price {
+      font-size: clamp(2.4rem, 8vw, 4.8rem);
+      color: var(--orange-dark);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      line-height: 1;
+      margin: 12px 0;
+    }
+
+    .bonus-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bonus-item {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 36px 0 52px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .print-only {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid.two,
+      .grid.three,
+      .chapter-layout,
+      .price-card {
+        grid-template-columns: 1fr;
+      }
+
+      .chapter-badge {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .chapter-badge .number {
+        font-size: 2.8rem;
+      }
+
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cover-card {
+        min-height: 470px;
+      }
+
+      .floating-note {
+        right: 16px;
+        bottom: 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner {
+        height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        min-height: 42px;
+        padding: 10px 14px;
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .mini-stats,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .cover-card {
+        padding: 18px;
+      }
+
+      .ebook-mockup {
+        width: 92%;
+        min-height: 390px;
+      }
+
+      .floating-note {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 16px;
+      }
+
+      .section-card,
+      .card {
+        border-radius: 22px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .topbar,
+      .hero-actions,
+      .btn {
+        display: none;
+      }
+
+      .section {
+        padding: 18px 0;
+        page-break-inside: avoid;
+      }
+
+      .section-card,
+      .card,
+      .price-card {
+        box-shadow: none;
+      }
+
+      .chapter-badge {
+        position: static;
+      }
+
+      .print-only {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#cover" aria-label="Kembali ke cover">
+        <span class="brand-mark">✦</span>
+        <span>Panduan UMKM Fashion</span>
+      </a>
+      <nav class="nav-actions" aria-label="Navigasi utama">
+        <a class="btn secondary" href="#daftar-isi">Daftar Isi</a>
+        <a class="btn" href="#daftar-isi">Baca Ebook</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="cover">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Ebook praktis untuk pemula dan pelaku UMKM</div>
+          <h1>Panduan Mulai Jualan Baju dari Nol</h1>
+          <p class="hero-lead">
+            Belajar menentukan konsep produk, memilih bahan, membuat pola, bekerja sama dengan konveksi, memilih sablon, menghitung modal, menentukan harga jual, sampai produk siap dijual.
+          </p>
+          <p>
+            Ebook ini dibuat untuk orang yang ingin mulai bisnis baju, tapi masih bingung harus mulai dari mana. Bahasanya dibuat ringan, contohnya dekat dengan usaha kecil, dan isinya fokus ke langkah yang bisa langsung dipakai.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#mulai">Mulai Baca Panduan</a>
+            <a class="btn secondary" href="#daftar-isi">Lihat Daftar Isi</a>
+          </div>
+          <div class="mini-stats">
+            <div class="stat">
+              <div class="num">10</div>
+              <div class="label">Bab utama</div>
+            </div>
+            <div class="stat">
+              <div class="num">7+</div>
+              <div class="label">Template siap pakai</div>
+            </div>
+            <div class="stat">
+              <div class="num">HP</div>
+              <div class="label">Nyaman dibaca mobile</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cover-card" aria-label="Mockup cover ebook">
+          <div class="ebook-mockup">
+            <div>
+              <div class="mockup-top">
+                <span>Ebook UMKM</span>
+                <span>Fashion Starter</span>
+              </div>
+              <h2 class="mockup-title">Mulai Jualan Baju dari Nol</h2>
+              <p class="mockup-subtitle">
+                Panduan praktis dari ide produk sampai siap produksi dan siap dijual.
+              </p>
+              <div class="mockup-tags">
+                <span>Bahan</span>
+                <span>Pola</span>
+                <span>Konveksi</span>
+                <span>Sablon</span>
+                <span>Modal</span>
+              </div>
+            </div>
+            <div>
+              <p class="mockup-subtitle">Untuk ibu-ibu UMKM, anak muda, bapak-bapak, dan pemula yang ingin mulai brand fashion kecil-kecilan.</p>
+            </div>
+          </div>
+          <div class="floating-note">
+            <small>Konsep visual</small>
+            <p>Friendly, hangat, clean, dengan warna peach, cream, orange soft, dan teal lembut.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mulai">
+      <div class="container section-card">
+        <div class="pill">Pembukaan</div>
+        <h2>Mulai bisnis baju itu tidak harus langsung besar</h2>
+        <p>
+          Banyak orang ingin jualan baju, tapi berhenti duluan karena merasa harus punya modal besar, harus paham semua jenis kain, atau harus punya brand yang terlihat mahal dari awal. Padahal, bisnis baju bisa dimulai dari langkah kecil yang rapi.
+        </p>
+        <p>
+          Yang sering bikin pemula rugi bukan karena idenya jelek, tapi karena terlalu cepat produksi tanpa memahami bahan, ukuran, pola, sample, sablon, dan harga jual. Ebook ini membantu kamu membaca alurnya pelan-pelan, supaya keputusanmu lebih aman sebelum keluar modal.
+        </p>
+        <div class="grid three" style="margin-top: 18px;">
+          <div class="card accent">
+            <div class="icon">👕</div>
+            <h3>Pahami produknya</h3>
+            <p>Mulai dari jenis baju, target pembeli, bahan yang cocok, sampai model yang realistis untuk dibuat.</p>
+          </div>
+          <div class="card teal">
+            <div class="icon">🧵</div>
+            <h3>Rapikan produksinya</h3>
+            <p>Belajar menyiapkan pola, sample, brief konveksi, alur produksi, dan quality control.</p>
+          </div>
+          <div class="card accent">
+            <div class="icon">📦</div>
+            <h3>Siapkan jualannya</h3>
+            <p>Hitung modal, tentukan harga, siapkan foto, deskripsi, packing, dan checklist sebelum dijual.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="section" id="daftar-isi">
+      <div class="container section-card">
+        <div class="pill">Daftar isi</div>
+        <h2>Baca sesuai tahap yang kamu butuhkan</h2>
+        <p>Daftar isi ini bisa diklik. Pembaca bisa langsung lompat ke bab yang sedang dibutuhkan.</p>
+        <div class="toc" style="margin-top: 20px;">
+          <a href="#bab-1"><span class="no">1</span><span>Menentukan konsep produk baju</span></a>
+          <a href="#bab-2"><span class="no">2</span><span>Memilih bahan kain</span></a>
+          <a href="#bab-3"><span class="no">3</span><span>Menentukan model dan pola baju</span></a>
+          <a href="#bab-4"><span class="no">4</span><span>Membuat sample produk</span></a>
+          <a href="#bab-5"><span class="no">5</span><span>Mencari dan bekerja sama dengan konveksi</span></a>
+          <a href="#bab-6"><span class="no">6</span><span>Alur produksi baju</span></a>
+          <a href="#bab-7"><span class="no">7</span><span>Panduan sablon dan printing</span></a>
+          <a href="#bab-8"><span class="no">8</span><span>Menghitung modal awal</span></a>
+          <a href="#bab-9"><span class="no">9</span><span>Menentukan harga jual</span></a>
+          <a href="#bab-10"><span class="no">10</span><span>Checklist sebelum produk dijual</span></a>
+          <a href="#bonus"><span class="no">+</span><span>Bonus template siap pakai</span></a>
+          <a href="#glosarium"><span class="no">A</span><span>Glosarium istilah produksi fashion</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-1">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">01</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Konsep produk</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Menentukan Konsep Produk Baju</h2>
+            <p>
+              Sebelum memilih bahan atau mencari konveksi, kamu perlu tahu dulu mau bikin produk apa, untuk siapa, dan dipakai dalam situasi apa. Konsep produk adalah arah awal supaya produksi tidak asal jalan.
+            </p>
+            <div class="grid two">
+              <div class="card">
+                <h3>Isi utama</h3>
+                <p>Mulai dari target pembeli. Misalnya ibu-ibu aktif butuh daster adem dan rapi, anak muda butuh kaos oversize yang nyaman, pekerja butuh kemeja simpel, atau komunitas butuh seragam yang kuat dipakai berkali-kali.</p>
+                <p>Setelah itu pilih jenis produk yang paling realistis. Untuk pemula, produk seperti kaos, daster, totebag, atau kemeja basic biasanya lebih mudah dikontrol dibanding model rumit dengan banyak detail.</p>
+              </div>
+              <div class="card teal">
+                <h3>Contoh nyata</h3>
+                <p>Misalnya kamu ingin jualan baju rumah untuk ibu-ibu. Produk awalnya bisa dimulai dari daster rayon motif simple ukuran all size. Targetnya bukan fashion show, tapi nyaman, adem, harga masuk, dan motifnya enak dilihat.</p>
+              </div>
+            </div>
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <ul class="simple-list">
+                <li>Ingin jual semua jenis baju sekaligus.</li>
+                <li>Memilih model hanya karena sedang viral, tanpa tahu siapa pembelinya.</li>
+                <li>Terlalu fokus desain, tapi lupa kenyamanan dan harga jual.</li>
+                <li>Produksi banyak sebelum tahu produk cocok untuk pasar mana.</li>
+              </ul>
+            </div>
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Sudah menentukan siapa target pembeli utama.</li>
+                <li>Sudah memilih satu jenis produk untuk produk awal.</li>
+                <li>Sudah punya referensi model dari foto, sketsa, atau produk contoh.</li>
+                <li>Sudah tahu kisaran harga jual yang masuk akal.</li>
+                <li>Sudah tahu keunggulan sederhana produkmu.</li>
+              </ul>
+            </div>
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Jangan mulai dari “aku mau bikin baju yang bagus”. Mulailah dari “aku mau bikin baju untuk siapa, dipakai kapan, dengan harga berapa, dan masalah apa yang dibantu”.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-2">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">02</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Bahan kain</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Memilih Bahan Kain</h2>
+            <p>
+              Bahan kain sangat berpengaruh ke kenyamanan, tampilan, biaya produksi, dan harga jual. Bahan yang bagus bukan selalu yang paling mahal, tapi yang paling cocok dengan fungsi produk dan target pembelinya.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nama bahan</th>
+                    <th>Karakter</th>
+                    <th>Cocok untuk</th>
+                    <th>Kelebihan</th>
+                    <th>Kekurangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Katun combed</td>
+                    <td>Lembut, nyaman, menyerap keringat</td>
+                    <td>Kaos harian</td>
+                    <td>Disukai pasar luas</td>
+                    <td>Harga bisa lebih tinggi dari bahan biasa</td>
+                  </tr>
+                  <tr>
+                    <td>Cotton bamboo</td>
+                    <td>Halus, adem, jatuh</td>
+                    <td>Kaos premium, baju anak</td>
+                    <td>Nyaman dan terasa lembut</td>
+                    <td>Modal bahan lebih tinggi</td>
+                  </tr>
+                  <tr>
+                    <td>Rayon</td>
+                    <td>Adem, jatuh, ringan</td>
+                    <td>Daster, blouse santai</td>
+                    <td>Nyaman untuk rumah dan cuaca panas</td>
+                    <td>Perlu hati-hati saat cuci dan setrika</td>
+                  </tr>
+                  <tr>
+                    <td>Fleece</td>
+                    <td>Tebal, hangat, agak berat</td>
+                    <td>Hoodie, sweater</td>
+                    <td>Tampak casual dan nyaman</td>
+                    <td>Tidak cocok untuk cuaca terlalu panas</td>
+                  </tr>
+                  <tr>
+                    <td>Drill</td>
+                    <td>Tebal, kuat, agak kaku</td>
+                    <td>Seragam, jaket kerja</td>
+                    <td>Kuat dan terlihat rapi</td>
+                    <td>Kurang jatuh untuk model flowy</td>
+                  </tr>
+                  <tr>
+                    <td>Linen blend</td>
+                    <td>Ringan, natural, agak bertekstur</td>
+                    <td>Kemeja santai, blouse</td>
+                    <td>Terlihat clean dan premium</td>
+                    <td>Mudah terlihat kusut</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid two" style="margin-top: 16px;">
+              <div class="card">
+                <h3>Tips bertanya ke supplier kain</h3>
+                <ul class="simple-list">
+                  <li>“Bahan ini biasanya dipakai untuk produk apa?”</li>
+                  <li>“Gramasi atau ketebalannya berapa?”</li>
+                  <li>“Lebar kainnya berapa?”</li>
+                  <li>“Apakah warnanya mudah luntur?”</li>
+                  <li>“Kalau beli banyak, minimal order berapa?”</li>
+                </ul>
+              </div>
+              <div class="card teal">
+                <h3>Contoh nyata</h3>
+                <p>Untuk kaos komunitas, katun combed bisa lebih aman karena nyaman dan sudah dikenal pembeli. Untuk daster rumahan, rayon bisa lebih menarik karena adem dan jatuh di badan.</p>
+              </div>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <p>Jangan memilih bahan hanya dari foto. Usahakan pegang langsung sample kain, cek ketebalan, rasa di kulit, jatuhnya kain, dan reaksi setelah dicuci.</p>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Sudah tahu bahan utama yang cocok untuk produk.</li>
+                <li>Sudah cek harga bahan per meter atau per kilogram.</li>
+                <li>Sudah tahu kebutuhan bahan per pcs.</li>
+                <li>Sudah cek warna, tekstur, ketebalan, dan kenyamanan.</li>
+                <li>Sudah punya sample kain sebelum produksi.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Pilih bahan berdasarkan fungsi produk, target pembeli, kenyamanan, dan harga jual. Bahan yang cocok akan membuat produk lebih mudah diterima pasar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-3">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">03</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Pola baju</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Menentukan Model dan Pola Baju</h2>
+            <p>
+              Pola baju adalah panduan potongan kain sebelum dijahit. Kalau desain adalah bayangan modelnya, pola adalah resep teknis supaya baju bisa dibentuk sesuai ukuran.
+            </p>
+            <div class="grid two">
+              <div class="card">
+                <h3>Bedanya desain, ukuran, size chart, dan pola</h3>
+                <ul class="simple-list">
+                  <li>Desain: tampilan produk yang ingin dibuat.</li>
+                  <li>Ukuran: angka panjang, lebar, lingkar dada, panjang lengan, dan lainnya.</li>
+                  <li>Size chart: daftar ukuran untuk S, M, L, XL, dan seterusnya.</li>
+                  <li>Pola: bentuk potongan kain yang akan dijahit menjadi baju.</li>
+                </ul>
+              </div>
+              <div class="card teal">
+                <h3>Contoh nyata</h3>
+                <p>Kamu ingin bikin kemeja oversize. Desainnya bisa dari referensi Pinterest atau foto produk. Size chart-nya menentukan lebar dada dan panjang baju. Polanya dibuat tukang pola agar kain bisa dipotong dan dijahit sesuai bentuk tersebut.</p>
+              </div>
+            </div>
+
+            <div class="card accent">
+              <h3>Cara membuat referensi model</h3>
+              <p>Kumpulkan 3 sampai 5 gambar referensi. Tandai bagian yang kamu suka, misalnya kerahnya, panjang lengannya, potongan bawahnya, atau posisi kantongnya. Jangan hanya bilang “buat seperti ini”, karena setiap detail bisa ditafsirkan berbeda oleh konveksi.</p>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <ul class="simple-list">
+                <li>Tidak memberi ukuran detail.</li>
+                <li>Mengandalkan kata “oversize” tanpa angka pasti.</li>
+                <li>Tidak menjelaskan posisi kantong, label, atau panjang lengan.</li>
+                <li>Tidak membuat sample sebelum produksi banyak.</li>
+              </ul>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist sebelum membuat pola</h3>
+              <ul class="checklist">
+                <li>Ada foto referensi model depan, samping, dan belakang.</li>
+                <li>Ada target ukuran yang jelas.</li>
+                <li>Ada catatan detail jahitan, kerah, lengan, kantong, dan label.</li>
+                <li>Ada bahan yang akan dipakai untuk sample.</li>
+                <li>Ada konfirmasi biaya pola dan sample.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Semakin jelas brief model dan ukuran, semakin kecil risiko hasil produksi melenceng dari bayanganmu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-4">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">04</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Sample</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Membuat Sample Produk</h2>
+            <p>
+              Sample adalah contoh produk pertama sebelum produksi banyak. Ini tahap yang sering dianggap buang biaya, padahal justru bisa menyelamatkan modal dari kesalahan produksi.
+            </p>
+
+            <div class="grid two">
+              <div class="card">
+                <h3>Apa saja yang harus dicek?</h3>
+                <ul class="simple-list">
+                  <li>Fit badan, apakah nyaman dipakai.</li>
+                  <li>Ukuran, apakah sesuai size chart.</li>
+                  <li>Jahitan, apakah rapi dan kuat.</li>
+                  <li>Bahan, apakah sesuai ekspektasi setelah dijahit.</li>
+                  <li>Warna, apakah cocok dengan konsep produk.</li>
+                  <li>Kenyamanan, apakah enak dipakai bergerak.</li>
+                </ul>
+              </div>
+              <div class="card teal">
+                <h3>Contoh nyata</h3>
+                <p>Sample kaos oversize terlihat bagus saat digantung, tapi saat dipakai lengan terlalu turun dan leher terlalu longgar. Ini harus direvisi dulu sebelum produksi 50 pcs, supaya tidak banyak stok yang sulit dijual.</p>
+              </div>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan umum saat sample pertama</h3>
+              <ul class="simple-list">
+                <li>Tidak mencoba sample di badan asli.</li>
+                <li>Tidak mencatat revisi secara detail.</li>
+                <li>Langsung produksi banyak karena merasa sample “sudah lumayan”.</li>
+                <li>Tidak membandingkan sample dengan target ukuran awal.</li>
+              </ul>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Sample difoto dari depan, samping, belakang, dan detail jahitan.</li>
+                <li>Sample dicoba oleh orang dengan ukuran badan sesuai target.</li>
+                <li>Setiap revisi ditulis dengan angka, bukan hanya komentar umum.</li>
+                <li>Hasil revisi dikonfirmasi lagi ke konveksi.</li>
+                <li>Sample final disimpan sebagai acuan produksi.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Sample adalah tempat terbaik untuk salah. Lebih aman salah di 1 pcs daripada salah di 50 pcs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-5">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">05</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Konveksi</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Mencari dan Bekerja Sama dengan Konveksi</h2>
+            <p>
+              Konveksi adalah partner produksi. Hubungan dengan konveksi harus jelas dari awal, karena miskomunikasi kecil bisa berubah jadi produk yang tidak sesuai.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Jenis partner</th>
+                    <th>Cocok untuk</th>
+                    <th>Kelebihan</th>
+                    <th>Hal yang perlu diperhatikan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Penjahit rumahan</td>
+                    <td>Sample, order kecil, revisi awal</td>
+                    <td>Lebih fleksibel</td>
+                    <td>Kapasitas terbatas</td>
+                  </tr>
+                  <tr>
+                    <td>Konveksi kecil</td>
+                    <td>Produksi puluhan sampai ratusan pcs</td>
+                    <td>Lebih siap produksi</td>
+                    <td>Brief harus jelas</td>
+                  </tr>
+                  <tr>
+                    <td>Pabrik garment</td>
+                    <td>Produksi besar dan standar tinggi</td>
+                    <td>Kapasitas besar</td>
+                    <td>Minimal order biasanya tinggi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid two" style="margin-top: 16px;">
+              <div class="card">
+                <h3>Pertanyaan wajib ke konveksi</h3>
+                <ul class="simple-list">
+                  <li>Minimal order berapa pcs?</li>
+                  <li>Bisa bantu pola dan sample?</li>
+                  <li>Biaya jahit per pcs berapa?</li>
+                  <li>Estimasi produksi berapa hari?</li>
+                  <li>Apakah bisa handle sablon, bordir, label, dan packing?</li>
+                  <li>Bagaimana jika ada produk cacat?</li>
+                </ul>
+              </div>
+              <div class="card teal">
+                <h3>Cara membaca kemampuan konveksi</h3>
+                <p>Lihat portofolio, jenis produk yang biasa dikerjakan, kerapian jahitan, komunikasi admin, kejelasan harga, dan kemampuan memberi masukan. Konveksi yang baik biasanya tidak hanya menerima order, tapi juga berani menjelaskan risiko produksi.</p>
+              </div>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <p>Jangan hanya memilih konveksi paling murah. Harga murah bisa tetap bagus, tapi kamu tetap perlu cek sample, review kerja, estimasi waktu, dan sistem revisinya.</p>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Sudah cek portofolio produk konveksi.</li>
+                <li>Sudah minta estimasi biaya detail.</li>
+                <li>Sudah tahu minimal order.</li>
+                <li>Sudah memberi brief tertulis.</li>
+                <li>Sudah sepakat soal revisi, deadline, dan produk cacat.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Konveksi yang tepat bukan cuma yang bisa jahit, tapi yang bisa diajak komunikasi jelas dari awal sampai produk selesai.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-6">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">06</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Alur produksi</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Alur Produksi Baju dari Awal Sampai Jadi</h2>
+            <p>
+              Produksi baju akan terasa lebih ringan kalau kamu paham urutannya. Jangan lompat ke produksi massal sebelum desain, bahan, pola, dan sample benar-benar jelas.
+            </p>
+
+            <div class="flow">
+              <div class="flow-step"><span>1</span><h4>Desain</h4><p>Tentukan model, target pembeli, dan referensi.</p></div>
+              <div class="flow-step"><span>2</span><h4>Bahan</h4><p>Pilih kain sesuai fungsi, harga, dan kenyamanan.</p></div>
+              <div class="flow-step"><span>3</span><h4>Pola</h4><p>Buat pola dan size chart sebagai acuan potong.</p></div>
+              <div class="flow-step"><span>4</span><h4>Sample</h4><p>Buat contoh produk pertama untuk dicek.</p></div>
+              <div class="flow-step"><span>5</span><h4>Revisi</h4><p>Perbaiki ukuran, bentuk, jahitan, atau detail.</p></div>
+              <div class="flow-step"><span>6</span><h4>Cutting</h4><p>Kain dipotong sesuai pola dan jumlah produksi.</p></div>
+              <div class="flow-step"><span>7</span><h4>Jahit</h4><p>Potongan kain dirakit menjadi produk.</p></div>
+              <div class="flow-step"><span>8</span><h4>Finishing</h4><p>Benang dirapikan, label dipasang, produk dicek.</p></div>
+              <div class="flow-step"><span>9</span><h4>QC</h4><p>Cek ukuran, noda, jahitan, sablon, dan cacat.</p></div>
+              <div class="flow-step"><span>10</span><h4>Packing</h4><p>Produk dilipat, dikemas, dan siap dijual.</p></div>
+            </div>
+
+            <div class="grid two" style="margin-top: 16px;">
+              <div class="card">
+                <h3>Contoh nyata</h3>
+                <p>Kamu ingin produksi 50 kaos. Jangan langsung kirim bahan ke konveksi tanpa sample. Buat 1 sample dulu, cek fitting, revisi leher atau panjang baju jika perlu, baru lanjut cutting untuk 50 pcs.</p>
+              </div>
+              <div class="card teal">
+                <h3>Kesalahan yang harus dihindari</h3>
+                <ul class="simple-list">
+                  <li>Produksi tanpa sample final.</li>
+                  <li>Tidak menyimpan acuan ukuran.</li>
+                  <li>Tidak mengecek produk saat proses berjalan.</li>
+                  <li>QC baru dilakukan setelah semua produk dipacking.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Desain dan referensi sudah jelas.</li>
+                <li>Bahan sudah disetujui.</li>
+                <li>Pola dan sample final sudah oke.</li>
+                <li>Jumlah produksi sudah dihitung.</li>
+                <li>Jadwal produksi sudah disepakati.</li>
+                <li>QC dilakukan sebelum produk dikirim ke pembeli.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Produksi yang rapi dimulai dari alur yang rapi. Jangan buru-buru banyak, pastikan sample kecilnya benar dulu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-7">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">07</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Sablon</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Panduan Sablon dan Printing</h2>
+            <p>
+              Teknik sablon yang dipilih akan mempengaruhi tampilan, rasa di kain, biaya, dan ketahanan desain. Untuk pemula, pilih teknik yang sesuai jumlah produksi dan jenis bahan.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Teknik</th>
+                    <th>Cocok untuk</th>
+                    <th>Kelebihan</th>
+                    <th>Kekurangan</th>
+                    <th>Catatan pemula</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sablon rubber</td>
+                    <td>Kaos bahan katun</td>
+                    <td>Fleksibel, biaya cukup aman</td>
+                    <td>Detail warna kompleks kurang maksimal</td>
+                    <td>Cocok untuk desain simple</td>
+                  </tr>
+                  <tr>
+                    <td>Plastisol</td>
+                    <td>Kaos distro, desain tegas</td>
+                    <td>Warna solid dan awet</td>
+                    <td>Butuh proses curing yang benar</td>
+                    <td>Bagus untuk produk yang ingin terlihat premium</td>
+                  </tr>
+                  <tr>
+                    <td>Polyflex</td>
+                    <td>Nama, nomor, desain satuan</td>
+                    <td>Cocok untuk custom kecil</td>
+                    <td>Kurang cocok untuk produksi besar yang murah</td>
+                    <td>Aman untuk jersey atau custom order</td>
+                  </tr>
+                  <tr>
+                    <td>DTF</td>
+                    <td>Desain full color, produksi kecil</td>
+                    <td>Bisa detail dan warna banyak</td>
+                    <td>Rasa tempelan bisa terasa di kain</td>
+                    <td>Cocok untuk mulai test market</td>
+                  </tr>
+                  <tr>
+                    <td>DTG</td>
+                    <td>Kaos full color</td>
+                    <td>Hasil menyatu dengan kain</td>
+                    <td>Lebih sensitif terhadap bahan dan perawatan</td>
+                    <td>Pastikan bahan kaos cocok</td>
+                  </tr>
+                  <tr>
+                    <td>Bordir</td>
+                    <td>Polo, kemeja, topi, seragam</td>
+                    <td>Terlihat rapi dan berkelas</td>
+                    <td>Kurang cocok untuk desain terlalu kecil atau rumit</td>
+                    <td>Bagus untuk logo sederhana</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid two" style="margin-top: 16px;">
+              <div class="card">
+                <h3>Teknik yang cocok untuk pemula</h3>
+                <p>Untuk produksi kecil dan desain full color, DTF sering lebih mudah dicoba. Untuk kaos simple satu sampai dua warna, rubber atau plastisol bisa jadi pilihan. Untuk seragam, bordir logo kecil biasanya terlihat lebih rapi.</p>
+              </div>
+              <div class="card teal">
+                <h3>Contoh nyata</h3>
+                <p>Kalau kamu ingin test market kaos desain lucu 12 pcs, DTF bisa lebih fleksibel. Kalau sudah yakin ingin produksi 100 pcs desain satu warna, sablon manual bisa lebih masuk hitungannya.</p>
+              </div>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan umum</h3>
+              <ul class="simple-list">
+                <li>Memilih sablon hanya karena paling murah.</li>
+                <li>Tidak menyesuaikan teknik sablon dengan bahan kain.</li>
+                <li>Tidak mencoba wash test atau tes cuci.</li>
+                <li>Memberi file desain resolusi rendah.</li>
+              </ul>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>File desain sudah jelas dan resolusi cukup.</li>
+                <li>Ukuran sablon sudah ditentukan dalam cm.</li>
+                <li>Posisi sablon sudah diberi contoh visual.</li>
+                <li>Teknik sablon sesuai bahan.</li>
+                <li>Sample sablon dicek sebelum produksi banyak.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Sablon yang bagus bukan hanya tajam secara visual, tapi juga cocok dengan kain, nyaman dipakai, dan masuk ke hitungan harga jual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-8">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">08</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Modal</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Menghitung Modal Awal</h2>
+            <p>
+              Modal produksi bukan hanya biaya jahit. Kamu perlu menghitung bahan, pola, sample, sablon, label, packaging, foto produk, dan biaya promosi.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Komponen biaya</th>
+                    <th>Contoh biaya 24 pcs</th>
+                    <th>Contoh biaya 50 pcs</th>
+                    <th>Catatan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bahan kain</td>
+                    <td>Rp720.000</td>
+                    <td>Rp1.500.000</td>
+                    <td>Misal Rp30.000 per pcs</td>
+                  </tr>
+                  <tr>
+                    <td>Jahit</td>
+                    <td>Rp600.000</td>
+                    <td>Rp1.250.000</td>
+                    <td>Misal Rp25.000 per pcs</td>
+                  </tr>
+                  <tr>
+                    <td>Sablon atau bordir</td>
+                    <td>Rp360.000</td>
+                    <td>Rp750.000</td>
+                    <td>Misal Rp15.000 per pcs</td>
+                  </tr>
+                  <tr>
+                    <td>Label dan hangtag</td>
+                    <td>Rp96.000</td>
+                    <td>Rp200.000</td>
+                    <td>Misal Rp4.000 per pcs</td>
+                  </tr>
+                  <tr>
+                    <td>Packaging</td>
+                    <td>Rp120.000</td>
+                    <td>Rp250.000</td>
+                    <td>Misal Rp5.000 per pcs</td>
+                  </tr>
+                  <tr>
+                    <td>Biaya pola dan sample</td>
+                    <td>Rp250.000</td>
+                    <td>Rp250.000</td>
+                    <td>Biaya awal, bisa dibagi ke jumlah produksi</td>
+                  </tr>
+                  <tr>
+                    <td>Foto produk sederhana</td>
+                    <td>Rp150.000</td>
+                    <td>Rp150.000</td>
+                    <td>Bisa ditekan jika foto sendiri</td>
+                  </tr>
+                  <tr>
+                    <td>Total perkiraan</td>
+                    <td>Rp2.296.000</td>
+                    <td>Rp4.350.000</td>
+                    <td>Angka contoh, sesuaikan dengan real cost</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid two" style="margin-top: 16px;">
+              <div class="card">
+                <h3>Rumus sederhana</h3>
+                <p>Total modal produksi = bahan + jahit + sablon + label + packaging + biaya awal + biaya promosi.</p>
+                <p>Modal per pcs = total modal produksi dibagi jumlah produk yang layak jual.</p>
+              </div>
+              <div class="card teal">
+                <h3>Contoh nyata</h3>
+                <p>Jika total modal 24 pcs adalah Rp2.296.000, maka modal per pcs sekitar Rp95.667. Dari sini kamu baru bisa menghitung harga jual, bukan menebak dari harga kompetitor saja.</p>
+              </div>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <p>Jangan lupa biaya kecil seperti plastik packing, label, ongkos kirim bahan, sample gagal, biaya marketplace, diskon, dan produk cacat. Biaya kecil yang lupa dihitung bisa membuat margin terlihat besar padahal tipis.</p>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Semua komponen biaya sudah dicatat.</li>
+                <li>Biaya sample dan pola sudah dimasukkan.</li>
+                <li>Ada cadangan untuk produk cacat atau revisi.</li>
+                <li>Modal per pcs sudah dihitung.</li>
+                <li>Target harga jual sudah dibandingkan dengan target pasar.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Hitung modal dari awal agar kamu tidak terlihat ramai order, tapi sebenarnya margin terlalu tipis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-9">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">09</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Harga jual</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Cara Menentukan Harga Jual</h2>
+            <p>
+              Harga jual tidak boleh asal murah. Kalau terlalu murah, kamu bisa sulit berkembang. Kalau terlalu mahal tanpa alasan jelas, pembeli bisa ragu.
+            </p>
+
+            <div class="grid two">
+              <div class="card">
+                <h3>Rumus sederhana</h3>
+                <p>Harga jual = modal per pcs + margin keuntungan + biaya operasional + ruang diskon.</p>
+                <p>Contoh: modal per pcs Rp96.000, target margin Rp35.000, biaya marketplace dan packing tambahan Rp9.000, maka harga jual minimal sekitar Rp140.000.</p>
+              </div>
+              <div class="card teal">
+                <h3>Biaya tersembunyi</h3>
+                <ul class="simple-list">
+                  <li>Admin marketplace.</li>
+                  <li>Promo voucher atau diskon.</li>
+                  <li>Produk cacat atau retur.</li>
+                  <li>Biaya foto, konten, dan iklan kecil.</li>
+                  <li>Waktu operasional dan tenaga packing.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card accent">
+              <h3>Cara menentukan harga tanpa asal murah</h3>
+              <p>Bandingkan dengan kompetitor, tapi jangan cuma ikut angka mereka. Lihat bahan, jahitan, detail produk, packaging, foto, dan positioning. Produk sederhana tetap bisa dijual lebih baik kalau tampilannya rapi dan informasinya jelas.</p>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <ul class="simple-list">
+                <li>Menentukan harga dari feeling.</li>
+                <li>Lupa menghitung biaya marketplace.</li>
+                <li>Terlalu sering diskon sampai margin habis.</li>
+                <li>Tidak punya harga reseller atau grosir jika dibutuhkan.</li>
+              </ul>
+            </div>
+
+            <div class="callout tip">
+              <h3>Checklist praktis</h3>
+              <ul class="checklist">
+                <li>Modal per pcs sudah jelas.</li>
+                <li>Margin keuntungan sudah ditentukan.</li>
+                <li>Biaya marketplace dan promo sudah dihitung.</li>
+                <li>Harga sudah dibandingkan dengan pasar.</li>
+                <li>Alasan harga sudah bisa dijelaskan lewat value produk.</li>
+              </ul>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Harga jual yang sehat membuat usaha bisa bertahan. Jangan hanya mengejar murah, kejar harga yang masuk akal dan tetap memberi ruang untung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="bab-10">
+      <div class="container chapter-layout">
+        <aside class="chapter-badge"><div><div class="label">Bab</div><div class="number">10</div></div><p style="color:rgba(255,255,255,0.88); margin:0;">Siap jual</p></aside>
+        <div class="chapter-content">
+          <div class="section-card">
+            <h2>Checklist Sebelum Produk Dijual</h2>
+            <p>
+              Sebelum produk naik ke marketplace atau website, pastikan produknya sudah siap dilihat, dipahami, dan dibeli. Produk yang bagus tetap bisa sepi kalau informasi jualannya kurang jelas.
+            </p>
+
+            <div class="grid two">
+              <div class="card">
+                <h3>Yang harus dicek</h3>
+                <ul class="checklist">
+                  <li>QC produk sudah dilakukan.</li>
+                  <li>Ukuran dan size chart sudah jelas.</li>
+                  <li>Foto produk sudah terang dan rapi.</li>
+                  <li>Deskripsi produk menjelaskan bahan, ukuran, dan cara perawatan.</li>
+                  <li>Packaging sudah siap.</li>
+                  <li>Stok sudah dicatat.</li>
+                  <li>Harga jual sudah final.</li>
+                  <li>Nama produk mudah dicari.</li>
+                  <li>Platform jualan sudah siap.</li>
+                  <li>Konten promosi sudah dibuat.</li>
+                </ul>
+              </div>
+              <div class="card teal">
+                <h3>Contoh deskripsi singkat</h3>
+                <p>Kaos oversize berbahan katun combed yang lembut dan nyaman dipakai harian. Potongan loose fit membuatnya terasa santai, mudah dipadukan dengan celana jeans, rok, atau cargo pants. Cocok untuk hangout, kuliah, kerja santai, dan aktivitas harian.</p>
+              </div>
+            </div>
+
+            <div class="callout warning">
+              <h3>Kesalahan yang harus dihindari</h3>
+              <p>Jangan upload produk hanya dengan foto seadanya dan deskripsi satu kalimat. Pembeli online tidak bisa pegang barang, jadi foto dan informasi adalah pengganti pengalaman melihat produk langsung.</p>
+            </div>
+
+            <div class="card accent">
+              <h3>Ringkasan singkat</h3>
+              <p>Produk siap jual bukan hanya sudah selesai dijahit. Produk siap jual berarti sudah jelas kualitasnya, stoknya, fotonya, deskripsinya, harganya, dan cara belinya.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bonus">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <div class="pill">Bonus template</div>
+            <h2>Template siap pakai untuk pembaca</h2>
+          </div>
+          <p>Bagian ini bisa kamu jadikan nilai jual tambahan di halaman produk ebook.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Checklist siap produksi</h3>
+            <ul class="checklist">
+              <li>Target pembeli sudah jelas.</li>
+              <li>Jenis produk sudah dipilih.</li>
+              <li>Referensi desain sudah dikumpulkan.</li>
+              <li>Bahan sudah dipilih dan dicek.</li>
+              <li>Size chart sudah dibuat.</li>
+              <li>Sample sudah disetujui.</li>
+              <li>Biaya produksi sudah dihitung.</li>
+              <li>Konveksi sudah memberi estimasi waktu.</li>
+            </ul>
+          </div>
+
+          <div class="card teal">
+            <h3>Template brief ke konveksi</h3>
+            <p>Nama produk: [isi nama produk]</p>
+            <p>Jenis produk: [kaos, hoodie, kemeja, daster, dan lainnya]</p>
+            <p>Bahan: [jenis bahan dan warna]</p>
+            <p>Ukuran: [S, M, L, XL atau all size]</p>
+            <p>Detail jahitan: [kerah, lengan, kantong, label]</p>
+            <p>Sablon/bordir: [teknik, ukuran, posisi]</p>
+            <p>Jumlah produksi: [jumlah pcs]</p>
+            <p>Deadline: [tanggal target selesai]</p>
+          </div>
+
+          <div class="card">
+            <h3>Template pertanyaan supplier bahan</h3>
+            <ul class="simple-list">
+              <li>Nama bahan ini apa?</li>
+              <li>Lebar kain berapa?</li>
+              <li>Gramasi atau ketebalannya berapa?</li>
+              <li>Cocok untuk produk apa?</li>
+              <li>Apakah mudah luntur?</li>
+              <li>Minimal order berapa?</li>
+              <li>Ada pilihan warna apa saja?</li>
+              <li>Harga grosirnya bagaimana?</li>
+            </ul>
+          </div>
+
+          <div class="card teal">
+            <h3>Template QC produk</h3>
+            <ul class="checklist">
+              <li>Ukuran sesuai size chart.</li>
+              <li>Jahitan tidak lepas.</li>
+              <li>Tidak ada noda atau bolong.</li>
+              <li>Warna sesuai batch.</li>
+              <li>Sablon atau bordir rapi.</li>
+              <li>Label terpasang benar.</li>
+              <li>Benang sisa sudah dirapikan.</li>
+              <li>Produk siap packing.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Template hitung modal</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Komponen</th><th>Biaya</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Bahan</td><td>Rp...</td></tr>
+                  <tr><td>Jahit</td><td>Rp...</td></tr>
+                  <tr><td>Sablon/bordir</td><td>Rp...</td></tr>
+                  <tr><td>Label</td><td>Rp...</td></tr>
+                  <tr><td>Packaging</td><td>Rp...</td></tr>
+                  <tr><td>Foto/konten</td><td>Rp...</td></tr>
+                  <tr><td>Biaya lain</td><td>Rp...</td></tr>
+                  <tr><td>Total modal</td><td>Rp...</td></tr>
+                  <tr><td>Modal per pcs</td><td>Total modal ÷ jumlah pcs</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card teal">
+            <h3>Template deskripsi produk jualan</h3>
+            <p>[Nama produk] dibuat untuk kamu yang butuh [manfaat utama]. Menggunakan bahan [nama bahan] yang terasa [karakter bahan], produk ini nyaman dipakai untuk [aktivitas].</p>
+            <p>Detail produk: bahan [isi], ukuran [isi], warna [isi], model [isi], perawatan [isi]. Cocok untuk [target pembeli atau aktivitas].</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="size-chart">
+      <div class="container section-card">
+        <div class="pill">Contoh size chart</div>
+        <h2>Size chart sederhana</h2>
+        <p>Ukuran ini hanya contoh. Setiap produk tetap perlu disesuaikan dengan model, bahan, dan target pembeli.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Lingkar dada</th>
+                <th>Panjang baju</th>
+                <th>Panjang lengan</th>
+                <th>Rekomendasi berat badan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>S</td><td>92 cm</td><td>64 cm</td><td>20 cm</td><td>40 sampai 50 kg</td></tr>
+              <tr><td>M</td><td>98 cm</td><td>67 cm</td><td>21 cm</td><td>50 sampai 60 kg</td></tr>
+              <tr><td>L</td><td>104 cm</td><td>70 cm</td><td>22 cm</td><td>60 sampai 70 kg</td></tr>
+              <tr><td>XL</td><td>110 cm</td><td>73 cm</td><td>23 cm</td><td>70 sampai 82 kg</td></tr>
+              <tr><td>XXL</td><td>116 cm</td><td>76 cm</td><td>24 cm</td><td>82 sampai 95 kg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="glosarium">
+      <div class="container section-card">
+        <div class="pill">Glosarium</div>
+        <h2>Istilah fashion production untuk pemula</h2>
+        <div class="grid three">
+          <div class="card"><h3>Pola</h3><p>Panduan bentuk potongan kain sebelum dijahit menjadi baju.</p></div>
+          <div class="card"><h3>Sample</h3><p>Contoh produk pertama untuk dicek sebelum produksi banyak.</p></div>
+          <div class="card"><h3>Size chart</h3><p>Tabel ukuran produk, seperti lingkar dada, panjang baju, dan panjang lengan.</p></div>
+          <div class="card"><h3>Cutting</h3><p>Proses memotong kain sesuai pola dan jumlah produksi.</p></div>
+          <div class="card"><h3>Finishing</h3><p>Tahap merapikan produk setelah dijahit, seperti memotong benang dan memasang label.</p></div>
+          <div class="card"><h3>QC</h3><p>Quality control, yaitu pengecekan kualitas produk sebelum dijual.</p></div>
+          <div class="card"><h3>MOQ</h3><p>Minimum order quantity, yaitu jumlah minimal produksi yang diminta supplier atau konveksi.</p></div>
+          <div class="card"><h3>Gramasi</h3><p>Ukuran ketebalan atau berat kain. Biasanya berpengaruh ke rasa dan kualitas bahan.</p></div>
+          <div class="card"><h3>Tech pack</h3><p>Dokumen detail produk yang berisi ukuran, bahan, warna, detail jahitan, dan instruksi produksi.</p></div>
+        </div>
+      </div>
+    </section>
+<section class="section" id="cta-akhir">
+      <div class="container section-card" style="text-align:center;">
+        <div class="pill">Penutup</div>
+        <h2>Mulai dari satu produk yang jelas</h2>
+        <p style="max-width: 760px; margin: 0 auto 18px;">
+          Kamu tidak perlu langsung punya puluhan model. Mulai dari satu produk yang targetnya jelas, bahannya tepat, sample-nya aman, dan hitungannya masuk. Setelah produk pertama berjalan, kamu bisa mengembangkan variasi warna, size, model, atau paket bundling.
+        </p>
+        <a class="btn" href="#cover">Kembali ke Cover</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Panduan Mulai Jualan Baju dari Nol untuk UMKM. Dibuat sebagai ebook digital ramah pemula yang nyaman dibaca lewat HP.</p>
+    </div>
+  </footer>
+</body>
+</html>
