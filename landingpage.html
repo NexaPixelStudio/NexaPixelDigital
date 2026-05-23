@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexaPixel Digital | Ebook & Template Bisnis Fashion UMKM</title>
+  <meta name="description" content="Katalog ebook digital untuk UMKM, brand fashion pemula, creator, dan seller marketplace. Belajar produksi kaos, desain, mockup, foto produk AI, editing, cetak desain, dan jualan marketplace." />
+
+  <style>
+    :root {
+      --bg: #fff8ef;
+      --paper: #ffffff;
+      --cream: #fff1df;
+      --cream-2: #fffaf4;
+      --peach: #ffb27d;
+      --orange: #ff7138;
+      --orange-dark: #c94e20;
+      --teal: #2fa99a;
+      --teal-soft: #dff6f2;
+      --yellow: #ffd36a;
+      --brown: #3f291f;
+      --muted: #78685d;
+      --line: #efd8c7;
+      --soft-line: rgba(239, 216, 199, 0.72);
+      --shadow: 0 20px 60px rgba(118, 71, 41, 0.13);
+      --shadow-soft: 0 12px 34px rgba(118, 71, 41, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--brown);
+      background:
+        radial-gradient(circle at top left, rgba(255, 178, 125, 0.45) 0, transparent 32%),
+        radial-gradient(circle at top right, rgba(47, 169, 154, 0.20) 0, transparent 30%),
+        linear-gradient(180deg, #fff8ef 0%, #fffaf6 48%, #fff8ef 100%);
+      line-height: 1.7;
+    }
+
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(63, 41, 31, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(63, 41, 31, 0.025) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.05));
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      color: var(--brown);
+      line-height: 1.14;
+    }
+
+    h1 {
+      font-size: clamp(2.55rem, 7.4vw, 5.75rem);
+      letter-spacing: -0.075em;
+    }
+
+    h2 {
+      font-size: clamp(1.85rem, 4vw, 3.4rem);
+      letter-spacing: -0.055em;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: clamp(1.18rem, 2.6vw, 1.55rem);
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 248, 239, 0.82);
+      border-bottom: 1px solid rgba(239, 216, 199, 0.82);
+    }
+
+    .topbar-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      color: var(--brown);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--orange), var(--peach));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 34px rgba(255, 113, 56, 0.26);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a:not(.btn) {
+      padding: 10px 12px;
+      color: #6d584b;
+      font-weight: 680;
+      font-size: 0.94rem;
+      border-radius: 999px;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav a:not(.btn):hover {
+      background: rgba(255,255,255,.65);
+      color: var(--brown);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 850;
+      letter-spacing: -0.015em;
+      box-shadow: 0 14px 34px rgba(255, 113, 56, 0.26);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #ef622b;
+      box-shadow: 0 18px 42px rgba(255, 113, 56, 0.32);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.78);
+      color: var(--brown);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .btn.secondary:hover {
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn.dark {
+      background: var(--brown);
+      box-shadow: 0 14px 34px rgba(63, 41, 31, 0.18);
+    }
+
+    .hero {
+      padding: 66px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(47, 169, 154, 0.13);
+      color: #24786f;
+      font-size: 0.88rem;
+      font-weight: 850;
+      margin-bottom: 18px;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.08rem, 2.2vw, 1.38rem);
+      color: #695346;
+      max-width: 760px;
+      margin: 20px 0 18px;
+    }
+
+    .highlight {
+      color: var(--orange-dark);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .trust-item {
+      padding: 14px;
+      border: 1px solid var(--soft-line);
+      background: rgba(255,255,255,.65);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(118, 71, 41, 0.045);
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--brown);
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
+    }
+
+    .trust-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      border-radius: 40px;
+      padding: 28px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.95), rgba(255, 240, 224, .92) 48%, rgba(223, 246, 242, .96));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-visual:before,
+    .hero-visual:after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: .78;
+      filter: blur(2px);
+    }
+
+    .hero-visual:before {
+      width: 210px;
+      height: 210px;
+      background: var(--peach);
+      right: -70px;
+      top: -60px;
+    }
+
+    .hero-visual:after {
+      width: 260px;
+      height: 260px;
+      background: #9de5db;
+      left: -90px;
+      bottom: -90px;
+    }
+
+    .stack {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: grid;
+      place-items: center;
+    }
+
+    .ebook-stack {
+      position: relative;
+      width: min(360px, 84%);
+      height: 440px;
+    }
+
+    .book {
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background: linear-gradient(160deg, #ff7138, #ffb27d 58%, #fff1df);
+      color: #fff;
+      padding: 26px;
+      box-shadow: 0 28px 80px rgba(76, 39, 21, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: rotate(-3deg);
+    }
+
+    .book.second {
+      transform: rotate(5deg) translate(28px, 18px);
+      background: linear-gradient(160deg, #2fa99a, #7ddbd0 58%, #e8fbf8);
+      opacity: .9;
+    }
+
+    .book.third {
+      transform: rotate(-10deg) translate(-28px, 26px);
+      background: linear-gradient(160deg, #ffd36a, #ff9e6e 58%, #fff2df);
+      opacity: .9;
+    }
+
+    .book.main {
+      z-index: 4;
+    }
+
+    .book small {
+      color: rgba(255,255,255,.86);
+      font-weight: 820;
+    }
+
+    .book-title {
+      font-size: 2.28rem;
+      line-height: 1.02;
+      letter-spacing: -0.065em;
+      color: #fff;
+      margin-top: 26px;
+    }
+
+    .book-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .book-tags span {
+      border: 1px solid rgba(255,255,255,.42);
+      background: rgba(255,255,255,.14);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.76rem;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 5;
+      right: 24px;
+      bottom: 28px;
+      width: 220px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 16px;
+      box-shadow: 0 18px 42px rgba(90, 55, 31, 0.14);
+    }
+
+    .floating-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--brown);
+    }
+
+    .floating-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .section {
+      padding: 42px 0;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(239,216,199,.9);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 16px 44px rgba(118, 71, 41, 0.07);
+      padding: clamp(22px, 4vw, 42px);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .section-head p {
+      max-width: 650px;
+      margin: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--cream);
+      color: var(--orange-dark);
+      border: 1px solid var(--line);
+      font-weight: 850;
+      font-size: 0.86rem;
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card.teal {
+      background: linear-gradient(145deg, #ffffff, var(--teal-soft));
+    }
+
+    .card.peach {
+      background: linear-gradient(145deg, #ffffff, #fff0e3);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      color: var(--orange-dark);
+      margin-bottom: 12px;
+      font-size: 1.28rem;
+    }
+
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.76);
+      color: var(--muted);
+      font-weight: 760;
+      font-size: 0.92rem;
+    }
+
+    .tab.active {
+      background: var(--brown);
+      color: #fff;
+      border-color: var(--brown);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 54px rgba(118, 71, 41, 0.13);
+    }
+
+    .product-cover {
+      min-height: 178px;
+      padding: 18px;
+      background: linear-gradient(145deg, #ff7138, #ffb27d);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-card:nth-child(2n) .product-cover {
+      background: linear-gradient(145deg, #2fa99a, #80dcd1);
+    }
+
+    .product-card:nth-child(3n) .product-cover {
+      background: linear-gradient(145deg, #ffd36a, #ff8a5d);
+    }
+
+    .product-card:nth-child(4n) .product-cover {
+      background: linear-gradient(145deg, #3f291f, #8d6044);
+    }
+
+    .product-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.88);
+      font-size: 0.78rem;
+      font-weight: 780;
+    }
+
+    .product-cover h3 {
+      color: #fff;
+      font-size: 1.55rem;
+      letter-spacing: -0.05em;
+      margin-top: 28px;
+      max-width: 260px;
+    }
+
+    .product-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-body p {
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 16px;
+    }
+
+    .tags span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--cream-2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(239, 216, 199, .8);
+    }
+
+    .price {
+      font-weight: 950;
+      color: var(--orange-dark);
+      letter-spacing: -0.035em;
+      font-size: 1.32rem;
+      white-space: nowrap;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 38px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--brown);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .bundle {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .bundle-hero {
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(63,41,31,.96), rgba(113,74,50,.93)),
+        var(--brown);
+      color: #fff;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: 0 24px 70px rgba(63, 41, 31, .2);
+    }
+
+    .bundle-hero h2,
+    .bundle-hero h3 {
+      color: #fff;
+    }
+
+    .bundle-hero p {
+      color: rgba(255,255,255,.78);
+    }
+
+    .bundle-price {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 18px 0;
+    }
+
+    .bundle-price .old {
+      color: rgba(255,255,255,.55);
+      text-decoration: line-through;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .bundle-price .new {
+      color: var(--yellow);
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      font-weight: 980;
+      letter-spacing: -0.08em;
+      line-height: 1;
+    }
+
+    .bundle-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 32px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .bundle-hero .checklist li {
+      color: rgba(255,255,255,.78);
+    }
+
+    .checklist li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--teal);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      counter-increment: step;
+      position: relative;
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step:before {
+      content: counter(step);
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      color: var(--orange-dark);
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 24px rgba(118, 71, 41, .045);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: var(--brown);
+      letter-spacing: -0.02em;
+    }
+
+    details p {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .cta-final {
+      text-align: center;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,240,227,.92) 48%, rgba(223,246,242,.92));
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      padding: clamp(28px, 5vw, 56px);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer {
+      padding: 38px 0 56px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .bundle,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.three,
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid.four,
+      .steps,
+      .trust-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .floating-card {
+        right: 18px;
+        bottom: 18px;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .topbar-inner {
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .nav {
+        gap: 6px;
+      }
+
+      .nav a:not(.btn) {
+        display: none;
+      }
+
+      .btn {
+        min-height: 42px;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-visual {
+        min-height: 470px;
+        padding: 18px;
+      }
+
+      .ebook-stack {
+        width: 88%;
+        height: 385px;
+      }
+
+      .book-title {
+        font-size: 1.95rem;
+      }
+
+      .floating-card {
+        position: relative;
+        width: 100%;
+        right: auto;
+        bottom: auto;
+        margin-top: 18px;
+      }
+
+      .grid.three,
+      .grid.four,
+      .product-grid,
+      .steps,
+      .trust-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 30px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .product-footer {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .mini-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#home" class="brand" aria-label="NexaPixel Digital">
+        <span class="brand-mark">✦</span>
+        <span>NexaPixel Digital</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#produk">Produk</a>
+        <a href="#bundle">Bundle</a>
+        <a href="#cara-beli">Cara Beli</a>
+        <a href="#faq">FAQ</a>
+        <a href="#produk" class="btn">Lihat Katalog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Katalog ebook digital untuk UMKM, creator, dan seller marketplace</div>
+          <h1>Dari bingung mulai jualan, jadi punya arah yang bisa diikuti.</h1>
+          <p class="hero-lead">
+            Belajar bikin produk fashion, desain visual, mockup, foto produk, media cetak, sampai cara posting dan jualan di marketplace. Semua dibuat dalam format ebook yang ringan, praktis, dan gampang dibaca dari HP.
+          </p>
+          <p>
+            Bukan materi yang muter-muter. Setiap ebook dibuat untuk satu kebutuhan jelas: produksi kaos, bikin desain, bikin mockup, bikin foto produk, cetak ke media, sampai naikin produk ke marketplace.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#produk">Lihat Semua Ebook</a>
+            <a class="btn secondary" href="#bundle">Ambil Paket Hemat</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item"><strong>Praktis</strong><span>Langkahnya bisa langsung diikuti</span></div>
+            <div class="trust-item"><strong>Friendly</strong><span>Bahasa ringan untuk pemula</span></div>
+            <div class="trust-item"><strong>UMKM-ready</strong><span>Cocok buat modal kecil</span></div>
+            <div class="trust-item"><strong>Mobile</strong><span>Nyaman dibaca lewat HP</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Ilustrasi koleksi ebook">
+          <div class="stack">
+            <div class="ebook-stack">
+              <div class="book third"></div>
+              <div class="book second"></div>
+              <div class="book main">
+                <div>
+                  <small>NexaPixel Ebook Series</small>
+                  <h2 class="book-title">Bikin Produk. Bikin Visual. Mulai Jualan.</h2>
+                  <p class="mockup-subtitle" style="color:rgba(255,255,255,.86);">
+                    Panduan digital untuk pemula yang ingin masuk ke bisnis fashion dan marketplace.
+                  </p>
+                </div>
+                <div class="book-tags">
+                  <span>Produksi</span>
+                  <span>Desain</span>
+                  <span>Mockup</span>
+                  <span>AI Photo</span>
+                  <span>Marketplace</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card">
+            <strong>Mulai dari yang kamu butuhkan</strong>
+            <p>Beli satuan, atau ambil bundle kalau mau belajar dari produksi sampai jualan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="masalah">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <div class="pill">Masalah yang sering kejadian</div>
+            <h2>Banyak orang mau jualan, tapi berhenti karena terlalu banyak yang harus dipelajari.</h2>
+          </div>
+          <p>
+            Produksi barang, desain, foto produk, mockup, cetak, upload marketplace, sampai iklan. Kalau dipelajari acak-acakan, rasanya berat. Karena itu produk di sini dibuat per topik, supaya belajarnya lebih fokus.
+          </p>
+        </div>
+
+        <div class="grid four">
+          <div class="card peach">
+            <div class="icon">🧵</div>
+            <h3>Bingung produksi</h3>
+            <p>Tidak tahu mulai dari bahan, pola, ukuran, konveksi, atau sablon.</p>
+          </div>
+          <div class="card teal">
+            <div class="icon">🎨</div>
+            <h3>Bingung desain</h3>
+            <p>Punya ide, tapi belum tahu cara bikin visual yang kelihatan siap jual.</p>
+          </div>
+          <div class="card peach">
+            <div class="icon">📸</div>
+            <h3>Foto produk kurang niat</h3>
+            <p>Produk bagus, tapi tampilannya di katalog belum bikin orang percaya.</p>
+          </div>
+          <div class="card teal">
+            <div class="icon">🛒</div>
+            <h3>Marketplace sepi</h3>
+            <p>Sudah upload produk, tapi judul, foto, deskripsi, dan iklannya belum rapi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="produk">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="pill">Katalog produk digital</div>
+            <h2>Pilih ebook sesuai kebutuhanmu sekarang.</h2>
+          </div>
+          <p>
+            Mulai dari produksi fashion, desain visual, mockup, foto produk, sampai jualan di marketplace. Semua bisa dijual satuan atau dijadikan paket bundle.
+          </p>
+        </div>
+
+        <div class="category-tabs" aria-label="Kategori produk">
+          <span class="tab active">Semua</span>
+          <span class="tab">Produksi fashion</span>
+          <span class="tab">Desain & mockup</span>
+          <span class="tab">Foto produk</span>
+          <span class="tab">Marketplace</span>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook produksi</span><span>01</span></div>
+              <h3>Produksi Kaos Anak dari Nol</h3>
+            </div>
+            <div class="product-body">
+              <p>Panduan memilih bahan, ukuran, pola, warna, sablon, dan quality control untuk produk kaos anak.</p>
+              <div class="tags"><span>Kaos anak</span><span>Bahan</span><span>Size</span></div>
+              <div class="product-footer"><span class="price">Rp49.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook produksi</span><span>02</span></div>
+              <h3>Produksi Kaos Dewasa untuk Pemula</h3>
+            </div>
+            <div class="product-body">
+              <p>Belajar bikin kaos dewasa dari konsep, bahan, size chart, sample, konveksi, sablon, sampai siap jual.</p>
+              <div class="tags"><span>Kaos dewasa</span><span>Konveksi</span><span>Sablon</span></div>
+              <div class="product-footer"><span class="price">Rp49.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook desain</span><span>03</span></div>
+              <h3>Cara Edit Gambar Desain Sendiri</h3>
+            </div>
+            <div class="product-body">
+              <p>Panduan edit desain sederhana agar visual terlihat lebih rapi, bersih, dan siap dipakai untuk produk.</p>
+              <div class="tags"><span>Editing</span><span>Desain</span><span>Pemula</span></div>
+              <div class="product-footer"><span class="price">Rp39.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook cetak</span><span>04</span></div>
+              <h3>Cetak Desain ke Kaos dan Media Cetak</h3>
+            </div>
+            <div class="product-body">
+              <p>Belajar menyiapkan file desain, ukuran cetak, posisi gambar, dan implementasi ke kaos atau media lain.</p>
+              <div class="tags"><span>Print</span><span>Kaos</span><span>File desain</span></div>
+              <div class="product-footer"><span class="price">Rp49.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook mockup</span><span>05</span></div>
+              <h3>Bikin Mockup Baju yang Siap Jual</h3>
+            </div>
+            <div class="product-body">
+              <p>Cara membuat mockup baju untuk katalog, poster promosi, marketplace, dan konten social media.</p>
+              <div class="tags"><span>Mockup</span><span>Katalog</span><span>Fashion</span></div>
+              <div class="product-footer"><span class="price">Rp39.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook AI</span><span>06</span></div>
+              <h3>Foto Produk Pakai AI</h3>
+            </div>
+            <div class="product-body">
+              <p>Panduan membuat visual produk yang terlihat menarik dengan AI, dari prompt, angle, background, sampai hasil katalog.</p>
+              <div class="tags"><span>AI photo</span><span>Prompt</span><span>Visual</span></div>
+              <div class="product-footer"><span class="price">Rp49.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook tools</span><span>07</span></div>
+              <h3>Foto Produk dengan Photoshop, Canva, dan Kittl</h3>
+            </div>
+            <div class="product-body">
+              <p>Belajar merapikan foto produk, membuat background, poster, dan tampilan katalog dengan tools populer.</p>
+              <div class="tags"><span>Photoshop</span><span>Canva</span><span>Kittl</span></div>
+              <div class="product-footer"><span class="price">Rp59.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook marketplace</span><span>08</span></div>
+              <h3>Cara Posting Produk di Marketplace</h3>
+            </div>
+            <div class="product-body">
+              <p>Panduan bikin judul, foto utama, deskripsi, variasi produk, kategori, keyword, dan halaman produk yang rapi.</p>
+              <div class="tags"><span>Shopee</span><span>TikTok Shop</span><span>SEO</span></div>
+              <div class="product-footer"><span class="price">Rp39.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-cover">
+              <div class="product-label"><span>Ebook ads</span><span>09</span></div>
+              <h3>Cara Atur Iklan Produk di Marketplace</h3>
+            </div>
+            <div class="product-body">
+              <p>Belajar dasar iklan produk, pilih produk yang layak diiklankan, atur budget, baca hasil, dan hindari boncos.</p>
+              <div class="tags"><span>Iklan</span><span>Budget</span><span>Optimasi</span></div>
+              <div class="product-footer"><span class="price">Rp59.000</span><a class="mini-btn" href="#">Lihat Detail</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bundle">
+      <div class="container bundle">
+        <div class="bundle-hero">
+          <div class="pill" style="background:rgba(255,255,255,.12); color:#ffd36a; border-color:rgba(255,255,255,.22);">Paket paling masuk akal</div>
+          <h2>Ambil bundle kalau mau belajar dari produksi sampai jualan.</h2>
+          <p>
+            Cocok untuk kamu yang ingin membangun katalog fashion dari nol, membuat desain produk sendiri, menyiapkan visual yang menarik, lalu upload dan mulai jualan di marketplace.
+          </p>
+
+          <div class="bundle-price">
+            <span class="old">Rp431.000</span>
+            <span class="new">Rp199.000</span>
+          </div>
+
+          <p>Harga bundle bisa kamu ubah sesuai strategi. Angka ini dibuat sebagai contoh promo awal agar terasa lebih menarik dibanding beli satuan.</p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#">Ambil Paket Hemat</a>
+            <a class="btn secondary" href="#produk">Cek Ebook Satuan</a>
+          </div>
+        </div>
+
+        <div class="bundle-side">
+          <div class="card">
+            <h3>Isi bundle lengkap</h3>
+            <ul class="checklist">
+              <li>Produksi kaos anak dan dewasa.</li>
+              <li>Edit desain sendiri.</li>
+              <li>Cetak desain ke media cetak.</li>
+              <li>Bikin mockup baju.</li>
+              <li>Foto produk pakai AI dan tools desain.</li>
+              <li>Posting produk di marketplace.</li>
+              <li>Dasar iklan produk di marketplace.</li>
+            </ul>
+          </div>
+
+          <div class="card teal">
+            <h3>Bonus yang bisa ditambahkan</h3>
+            <p>Template deskripsi produk, checklist produksi, prompt foto produk AI, template judul marketplace, dan mini planner konten promosi 7 hari.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="alur">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <div class="pill">Alur belajar</div>
+            <h2>Belajarnya dibuat berurutan, biar tidak loncat-loncat.</h2>
+          </div>
+          <p>Mulai dari produk, lalu visual, lalu marketplace. Ini bikin proses belajarnya lebih masuk akal untuk pemula.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Pilih produk</h3>
+            <p>Tentukan mau mulai dari kaos anak, kaos dewasa, atau produk fashion lain.</p>
+          </div>
+          <div class="step">
+            <h3>Siapkan visual</h3>
+            <p>Buat desain, mockup, foto produk AI, atau edit foto dengan tools desain.</p>
+          </div>
+          <div class="step">
+            <h3>Upload jualan</h3>
+            <p>Susun judul, foto utama, deskripsi, variasi, dan keyword marketplace.</p>
+          </div>
+          <div class="step">
+            <h3>Mulai promosi</h3>
+            <p>Gunakan konten organik dan iklan marketplace dengan budget yang lebih terukur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cara-beli">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <div class="pill">Cara beli</div>
+            <h2>Simple. Pilih ebook, bayar, lalu akses file digital.</h2>
+          </div>
+          <p>Bagian ini bisa kamu sambungkan ke WhatsApp, checkout website, Lynk, Mayar, Gumroad, atau sistem download otomatis milikmu.</p>
+        </div>
+
+        <div class="grid three">
+          <div class="card peach">
+            <div class="icon">1</div>
+            <h3>Pilih produk</h3>
+            <p>Pilih ebook satuan atau bundle sesuai kebutuhan kamu sekarang.</p>
+          </div>
+          <div class="card teal">
+            <div class="icon">2</div>
+            <h3>Lakukan pembayaran</h3>
+            <p>Bayar melalui metode yang tersedia di halaman checkout atau WhatsApp admin.</p>
+          </div>
+          <div class="card peach">
+            <div class="icon">3</div>
+            <h3>Download dan pelajari</h3>
+            <p>Setelah pembayaran selesai, kamu bisa akses ebook dan mulai mengikuti panduannya.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container section-card">
+        <div class="section-head">
+          <div>
+            <div class="pill">FAQ</div>
+            <h2>Pertanyaan yang mungkin muncul sebelum beli</h2>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>Apakah ebook ini cocok untuk pemula?</summary>
+            <p>Iya. Bahasa dibuat ringan dan tidak terlalu teknis. Cocok untuk orang yang baru mulai belajar produksi fashion, desain produk, atau jualan di marketplace.</p>
+          </details>
+
+          <details>
+            <summary>Apakah harus punya bisnis dulu?</summary>
+            <p>Tidak harus. Ebook ini justru cocok untuk kamu yang masih di tahap belajar, riset produk, atau mau mulai usaha kecil-kecilan.</p>
+          </details>
+
+          <details>
+            <summary>Apakah bisa dibaca lewat HP?</summary>
+            <p>Bisa. Format halaman dibuat ringan, rapi, dan nyaman untuk dibaca lewat HP.</p>
+          </details>
+
+          <details>
+            <summary>Apakah ebook ini mengajarkan sampai bisa langsung jualan?</summary>
+            <p>Ebook membantu memberi arah dan langkah praktik. Hasil akhirnya tetap tergantung eksekusi, kualitas produk, konsistensi promosi, dan cara kamu membaca pasar.</p>
+          </details>
+
+          <details>
+            <summary>Lebih baik beli satuan atau bundle?</summary>
+            <p>Kalau butuh satu topik saja, beli satuan sudah cukup. Kalau ingin belajar dari produksi, desain, visual, sampai marketplace, bundle lebih hemat.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta-final">
+          <div class="pill">Mulai dari satu langkah kecil</div>
+          <h2>Jangan tunggu semua sempurna dulu baru mulai.</h2>
+          <p>
+            Pilih satu ebook yang paling dekat dengan kebutuhanmu sekarang. Rapikan produknya, buat visualnya lebih layak jual, lalu mulai upload dan tes pasar.
+          </p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn" href="#produk">Pilih Ebook Sekarang</a>
+            <a class="btn secondary" href="#bundle">Lihat Paket Bundle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>NexaPixel Digital. Ebook dan template praktis untuk UMKM, creator, dan seller marketplace.</p>
+    </div>
+  </footer>
+</body>
+</html>
