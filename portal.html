@@ -3,40 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page Ebook Panduan Mulai Jualan Baju dari Nol</title>
-  <meta name="description" content="Landing page katalog untuk ebook Panduan Mulai Jualan Baju dari Nol untuk UMKM." />
+  <title>Masukkan Token Ebook | NexaPixel Digital</title>
+  <meta name="description" content="Halaman token akses ebook NexaPixel Digital." />
+
   <style>
     :root {
       --bg: #fff8ef;
       --paper: #ffffff;
       --cream: #fff1df;
       --peach: #ffb27d;
-      --orange: #ff7a3d;
-      --orange-dark: #cc5524;
-      --teal: #3ba99c;
-      --teal-soft: #d9f3ef;
-      --brown: #4a3125;
-      --muted: #74685f;
-      --line: #f0d9c8;
-      --shadow: 0 20px 60px rgba(125, 77, 44, 0.13);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --max: 1120px;
+      --orange: #ff7138;
+      --orange-dark: #c94e20;
+      --teal: #2fa99a;
+      --teal-soft: #dff6f2;
+      --brown: #3f291f;
+      --muted: #78685d;
+      --line: #efd8c7;
+      --shadow: 0 20px 60px rgba(118, 71, 41, 0.13);
+      --max: 960px;
     }
 
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       color: var(--brown);
       background:
-        radial-gradient(circle at top left, #ffe1c5 0, transparent 34%),
-        radial-gradient(circle at top right, #d7f4ed 0, transparent 28%),
+        radial-gradient(circle at top left, rgba(255, 178, 125, .48) 0, transparent 34%),
+        radial-gradient(circle at top right, rgba(47, 169, 154, .22) 0, transparent 30%),
         var(--bg);
       line-height: 1.72;
+      min-height: 100vh;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -47,27 +45,21 @@
       font-size: 1rem;
     }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       margin: 0;
-      line-height: 1.18;
+      line-height: 1.14;
       color: var(--brown);
     }
 
     h1 {
-      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-size: clamp(2.15rem, 6vw, 4.4rem);
       letter-spacing: -0.07em;
     }
 
     h2 {
-      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-size: clamp(1.45rem, 4vw, 2.5rem);
       letter-spacing: -0.045em;
       margin-bottom: 14px;
-    }
-
-    h3 {
-      font-size: clamp(1.2rem, 3vw, 1.55rem);
-      letter-spacing: -0.025em;
-      margin-bottom: 10px;
     }
 
     .container {
@@ -80,367 +72,103 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(255, 248, 239, 0.86);
-      border-bottom: 1px solid rgba(240, 217, 200, 0.8);
+      background: rgba(255, 248, 239, .86);
+      border-bottom: 1px solid rgba(239, 216, 199, .86);
     }
 
     .topbar-inner {
-      min-height: 72px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: var(--brown);
+      font-weight: 900;
+      letter-spacing: -0.03em;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--orange), var(--peach));
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
       display: grid;
       place-items: center;
       color: #fff;
-      box-shadow: 0 10px 30px rgba(255, 122, 61, 0.25);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      background: linear-gradient(135deg, var(--orange), var(--peach));
+      box-shadow: 0 12px 32px rgba(255,113,56,.24);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       min-height: 46px;
       padding: 12px 18px;
-      border-radius: 999px;
       border: 1px solid transparent;
+      border-radius: 999px;
       background: var(--orange);
       color: #fff;
-      font-weight: 750;
-      letter-spacing: -0.01em;
-      box-shadow: 0 14px 30px rgba(255, 122, 61, 0.23);
+      font-weight: 850;
+      letter-spacing: -0.015em;
+      box-shadow: 0 14px 32px rgba(255,113,56,.25);
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      font: inherit;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 38px rgba(255, 122, 61, 0.28);
-      background: #f0692d;
+      background: #ef622b;
+      box-shadow: 0 18px 42px rgba(255,113,56,.31);
     }
 
     .btn.secondary {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255,255,255,.78);
       color: var(--brown);
       border-color: var(--line);
       box-shadow: none;
     }
 
     .hero {
-      padding: 66px 0 40px;
+      padding: 64px 0 54px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 34px;
-      align-items: center;
+    .access-card {
+      border-radius: 34px;
+      background: linear-gradient(145deg, #fff, #fff1e4 52%, #dff6f2);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 48px);
     }
 
-    .eyebrow, .pill {
+    .pill {
       display: inline-flex;
+      width: fit-content;
       align-items: center;
       gap: 8px;
+      padding: 8px 12px;
       border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 850;
       background: var(--cream);
       border: 1px solid var(--line);
       color: var(--orange-dark);
-      padding: 8px 12px;
-      font-weight: 760;
-      font-size: 0.86rem;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .eyebrow {
-      background: rgba(59, 169, 156, 0.14);
-      color: #247d74;
-      border: none;
-      margin-bottom: 20px;
-    }
-
-    .hero-lead {
-      font-size: clamp(1.08rem, 2.3vw, 1.35rem);
-      color: #6d5748;
-      max-width: 760px;
-      margin: 20px 0 24px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .cover-card {
-      position: relative;
-      min-height: 520px;
-      border-radius: 38px;
-      background: linear-gradient(145deg, #fff 0%, #fff2e5 48%, #dff5f0 100%);
-      border: 1px solid rgba(240, 217, 200, 0.9);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding: 30px;
-    }
-
-    .ebook-mockup {
-      position: relative;
-      z-index: 2;
-      width: min(330px, 85%);
-      min-height: 430px;
-      margin: 16px auto;
-      border-radius: 26px;
-      background: linear-gradient(160deg, #ff7a3d, #ffb27d 52%, #fff2e5);
-      box-shadow: 0 28px 70px rgba(88, 46, 24, 0.28);
-      padding: 26px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transform: rotate(-2deg);
-    }
-
-    .mockup-title {
-      font-size: 2.35rem;
-      line-height: 1.02;
-      letter-spacing: -0.07em;
-      margin-top: 30px;
-      color: #fff;
-    }
-
-    .mockup-subtitle {
-      color: rgba(255,255,255,0.88);
-      font-size: 0.98rem;
-      margin-top: 14px;
-    }
-
-    .mockup-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    .mockup-tags span {
-      border: 1px solid rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.16);
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 0.76rem;
-    }
-
-    .section {
-      padding: 38px 0;
-    }
-
-    .section-card {
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(240,217,200,0.92);
-      border-radius: var(--radius-xl);
-      box-shadow: 0 16px 45px rgba(125, 77, 44, 0.07);
-      padding: clamp(22px, 4vw, 42px);
-    }
-
-    .grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .grid.two { grid-template-columns: repeat(2, 1fr); }
-    .grid.three { grid-template-columns: repeat(3, 1fr); }
-
-    .card {
-      border-radius: var(--radius-lg);
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(125, 77, 44, 0.05);
-    }
-
-    .card.teal {
-      background: linear-gradient(145deg, #ffffff, var(--teal-soft));
-    }
-
-    .checklist {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .checklist li {
-      position: relative;
-      padding-left: 32px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .checklist li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 1px;
-      width: 22px;
-      height: 22px;
-      border-radius: 9px;
-      display: grid;
-      place-items: center;
-      background: var(--teal);
-      color: #fff;
-      font-size: 0.78rem;
-      font-weight: 850;
-    }
-
-    .price-card {
-      display: grid;
-      grid-template-columns: 1fr 0.85fr;
-      gap: 20px;
-      align-items: center;
-      background: linear-gradient(145deg, #ffffff, #fff0e3 55%, #dff5f0);
-      border-radius: 32px;
-      border: 1px solid var(--line);
-      padding: clamp(22px, 4vw, 38px);
-      box-shadow: var(--shadow);
-    }
-
-    .price {
-      font-size: clamp(2.4rem, 8vw, 4.8rem);
+    .product-title {
       color: var(--orange-dark);
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      line-height: 1;
-      margin: 12px 0;
-    }
-
-    .bonus-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .bonus-item {
-      background: rgba(255,255,255,0.8);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px 14px;
-      color: var(--muted);
-    }
-
-    .footer {
-      padding: 36px 0 52px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid, .grid.two, .grid.three, .price-card {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .topbar-inner {
-        padding: 12px 0;
-        align-items: flex-start;
-      }
-
-      .nav-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        min-height: 42px;
-        padding: 10px 14px;
-        font-size: 0.92rem;
-      }
-
-      .hero { padding-top: 34px; }
-
-      .cover-card { padding: 18px; min-height: 450px; }
-
-      .ebook-mockup {
-        width: 92%;
-        min-height: 390px;
-      }
-    }
-  
-    .access-card {
-      margin-top: 20px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--line);
-      padding: clamp(20px, 4vw, 32px);
-      box-shadow: 0 16px 45px rgba(125, 77, 44, 0.08);
-    }
-
-    .access-form {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .access-input {
-      width: 100%;
-      min-height: 50px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: #fff;
-      padding: 0 18px;
-      color: var(--brown);
-      font: inherit;
-      outline: none;
-      box-shadow: 0 8px 20px rgba(125, 77, 44, 0.04);
-    }
-
-    .access-input:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(255,122,61,0.13);
-    }
-
-    .access-message {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .access-message.ok {
-      color: #247d74;
-      font-weight: 700;
-    }
-
-    .access-message.error {
-      color: #b44b25;
-      font-weight: 700;
+      font-weight: 850;
     }
 
     .locked-alert {
       display: none;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       border-radius: 18px;
       padding: 14px 16px;
       background: #fff3df;
@@ -448,212 +176,217 @@
       color: var(--brown);
     }
 
-    .payment-note {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: var(--teal-soft);
-      border: 1px solid #bfe7e0;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .access-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-top: 22px;
     }
 
-    @media (max-width: 560px) {
+    .access-input {
+      width: 100%;
+      min-height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--brown);
+      padding: 0 18px;
+      outline: none;
+      font: inherit;
+      box-shadow: 0 8px 20px rgba(118,71,41,.045);
+    }
+
+    .access-input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px rgba(255,113,56,.13);
+    }
+
+    .access-message {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .access-message.ok {
+      color: #24786f;
+      font-weight: 780;
+    }
+
+    .access-message.error {
+      color: #b44b25;
+      font-weight: 780;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .note {
+      margin-top: 18px;
+      border-radius: 18px;
+      background: rgba(47,169,154,.12);
+      border: 1px solid #bfe7e0;
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .footer {
+      padding: 28px 0 52px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .topbar-inner {
+        padding: 12px 0;
+        align-items: flex-start;
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
       .access-form {
         grid-template-columns: 1fr;
       }
-    }
 
+      .btn {
+        width: 100%;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#home">
+      <a class="brand" href="index.html">
         <span class="brand-mark">✦</span>
         <span>NexaPixel Digital</span>
       </a>
-      <nav class="nav-actions">
-        <a class="btn secondary" href="#isi">Isi Ebook</a>
-        <a class="btn secondary" href="#akses">Masuk Ebook</a>
-        <a class="btn" href="#harga">Beli Ebook</a>
-      </nav>
+      <a class="btn secondary" id="backDetailButton" href="#">Detail Produk</a>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Ebook praktis untuk UMKM fashion pemula</div>
-          <h1>Panduan Mulai Jualan Baju dari Nol</h1>
-          <p class="hero-lead">
-            Belajar memilih bahan, menentukan model, membuat pola, bekerja sama dengan konveksi, memilih sablon, menghitung modal, dan menyiapkan produk sampai siap dijual.
-          </p>
-          <p>
-            Cocok untuk ibu-ibu UMKM, anak muda yang mau mulai brand kecil-kecilan, bapak-bapak yang ingin paham alur bisnis pakaian, dan siapa pun yang masih awam soal produksi baju.
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="#harga">Beli dan Download Ebook</a>
-            <a class="btn secondary" href="#isi">Lihat Isi Ebook</a>
-          </div>
+  <main class="hero">
+    <div class="container">
+      <div class="access-card">
+        <div id="lockedAlert" class="locked-alert">
+          Akses ebook belum aktif. Silakan masukkan token yang kamu terima setelah pembayaran.
         </div>
 
-        <div class="cover-card">
-          <div class="ebook-mockup">
-            <div>
-              <p style="color:rgba(255,255,255,.9); margin:0;">Ebook UMKM Fashion</p>
-              <h2 class="mockup-title">Mulai Jualan Baju dari Nol</h2>
-              <p class="mockup-subtitle">Panduan praktis dari ide produk sampai siap produksi dan siap dijual.</p>
-              <div class="mockup-tags">
-                <span>Bahan</span>
-                <span>Pola</span>
-                <span>Konveksi</span>
-                <span>Sablon</span>
-                <span>Modal</span>
-              </div>
-            </div>
-            <p class="mockup-subtitle">Bahasa ringan, contoh praktis, dan nyaman dibaca lewat HP.</p>
-          </div>
+        <div class="pill">Akses pembeli</div>
+        <h1>Masukkan token ebook</h1>
+        <p>
+          Produk yang akan dibuka: <span class="product-title" id="productTitle">Loading...</span>
+        </p>
+        <p>
+          Token dikirim setelah pembayaran berhasil. Pastikan token yang kamu masukkan sesuai dengan produk yang kamu beli.
+        </p>
+
+        <div class="access-form">
+          <input class="access-input" id="accessToken" type="text" placeholder="Masukkan token akses" autocomplete="off" />
+          <button class="btn" type="button" onclick="unlockEbook()">Buka Ebook</button>
+        </div>
+
+        <div id="accessMessage" class="access-message">
+          Belum punya token? Kembali ke halaman detail produk, lalu klik tombol beli.
+        </div>
+
+        <div class="actions">
+          <a class="btn secondary" id="buyButton" href="#">Beli dulu</a>
+          <a class="btn secondary" href="index.html">Kembali ke landing page</a>
+        </div>
+
+        <div class="note">
+          Admin note: token, file ebook, dan link checkout bisa kamu ubah di bagian <strong>PRODUCTS</strong> pada kode halaman ini.
         </div>
       </div>
-    </section>
-
-    <section class="section" id="isi">
-      <div class="container section-card">
-        <div class="pill">Isi ebook</div>
-        <h2>Apa yang akan dipelajari?</h2>
-        <div class="grid three">
-          <div class="card"><h3>Konsep produk</h3><p>Menentukan target pembeli, jenis baju, niche awal, dan kesalahan pemula yang perlu dihindari.</p></div>
-          <div class="card teal"><h3>Bahan dan pola</h3><p>Memahami bahan kain, size chart, pola baju, sample, dan cara memberi arahan ke konveksi.</p></div>
-          <div class="card"><h3>Produksi dan sablon</h3><p>Belajar alur produksi dari desain, cutting, jahit, finishing, QC, packing, sampai teknik sablon.</p></div>
-          <div class="card teal"><h3>Hitung modal</h3><p>Contoh simulasi biaya produksi 24 pcs dan 50 pcs, termasuk biaya bahan, jahit, sablon, label, dan packaging.</p></div>
-          <div class="card"><h3>Harga jual</h3><p>Cara menentukan harga jual tanpa asal murah, termasuk margin dan biaya tersembunyi.</p></div>
-          <div class="card teal"><h3>Checklist siap jual</h3><p>QC produk, foto, deskripsi, stok, harga, platform jualan, dan konten promosi.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="manfaat">
-      <div class="container section-card">
-        <div class="pill">Manfaat</div>
-        <h2>Ebook ini membantu kamu supaya tidak asal produksi</h2>
-        <div class="grid three">
-          <div class="card">
-            <h3>Lebih paham bahan</h3>
-            <p>Kamu jadi tahu bahan mana yang cocok untuk kaos, hoodie, blouse, daster, seragam, dan baju anak.</p>
-          </div>
-          <div class="card">
-            <h3>Lebih siap ke konveksi</h3>
-            <p>Kamu bisa memberi brief yang lebih jelas, jadi risiko miskomunikasi dengan konveksi lebih kecil.</p>
-          </div>
-          <div class="card">
-            <h3>Lebih aman hitung modal</h3>
-            <p>Kamu bisa tahu biaya yang perlu dihitung sebelum menentukan harga jual.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="bonus">
-      <div class="container section-card">
-        <div class="pill">Bonus template</div>
-        <h2>Bonus yang kamu dapatkan</h2>
-        <div class="grid two">
-          <div class="card">
-            <ul class="checklist">
-              <li>Checklist siap produksi.</li>
-              <li>Template brief ke konveksi.</li>
-              <li>Template pertanyaan untuk supplier bahan.</li>
-              <li>Template QC produk.</li>
-            </ul>
-          </div>
-          <div class="card teal">
-            <ul class="checklist">
-              <li>Template hitung modal.</li>
-              <li>Template deskripsi produk jualan.</li>
-              <li>Contoh size chart sederhana.</li>
-              <li>Glosarium istilah fashion production untuk pemula.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="harga">
-      <div class="container">
-        <div class="price-card">
-          <div>
-            <div class="pill">Rekomendasi harga jual</div>
-            <h2>Harga yang terasa masuk untuk produk digital pemula</h2>
-            <p>
-              Untuk katalog website, ebook ini bisa dijual di rentang Rp39.000 sampai Rp79.000. Jika bonus template dibuat lebih rapi dan bisa diunduh terpisah, harga Rp99.000 masih masuk akal untuk pasar yang tepat.
-            </p>
-            <div class="price">Rp49.000</div>
-            <p>Rekomendasi harga awal: cukup mudah dibeli, tapi tetap terasa bernilai karena ada panduan dan template.</p>
-            <div class="hero-actions">
-              <a class="btn" href="https://wa.me/6281234567890?text=Halo%20NexaPixel%2C%20saya%20mau%20beli%20ebook%20Panduan%20Mulai%20Jualan%20Baju%20dari%20Nol.">Beli via WhatsApp</a>
-              <a class="btn secondary" href="#bonus">Lihat Isi Bonus</a>
-            </div>
-          </div>
-          <div class="bonus-list">
-            <div class="bonus-item">Checklist siap produksi</div>
-            <div class="bonus-item">Template brief ke konveksi</div>
-            <div class="bonus-item">Template pertanyaan supplier bahan</div>
-            <div class="bonus-item">Template QC produk</div>
-            <div class="bonus-item">Template hitung modal</div>
-            <div class="bonus-item">Template deskripsi produk jualan</div>
-            <div class="bonus-item">Contoh size chart sederhana</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="akses">
-      <div class="container">
-        <div class="access-card">
-          <div id="lockedAlert" class="locked-alert">
-            Akses ebook belum aktif. Silakan beli dulu, lalu masukkan token akses yang kamu terima setelah pembayaran.
-          </div>
-
-          <div class="pill">Akses pembeli</div>
-          <h2>Sudah bayar? Masukkan token akses di sini.</h2>
-          <p>
-            Setelah pembayaran dikonfirmasi, pembeli akan menerima token akses. Token ini dipakai untuk membuka halaman ebook:
-            <strong>panduan-mulai-jualan-baju-dari-nol.html</strong>
-          </p>
-
-          <div class="access-form">
-            <input class="access-input" id="accessToken" type="text" placeholder="Contoh: NEXA-BAJU-49K" autocomplete="off" />
-            <button class="btn" type="button" onclick="unlockEbook()">Buka Ebook</button>
-          </div>
-
-          <div id="accessMessage" class="access-message">
-            Belum punya token? Klik tombol beli, lalu admin akan kirim token setelah pembayaran masuk.
-          </div>
-
-          <div class="payment-note">
-            Catatan admin: untuk GitHub Pages, sistem token seperti ini cocok sebagai akses sederhana. Untuk proteksi yang benar-benar kuat, file ebook sebaiknya dikirim lewat platform pembayaran digital atau server yang bisa memverifikasi transaksi.
-          </div>
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>Landing page katalog untuk ebook Panduan Mulai Jualan Baju dari Nol.</p>
+      <p>NexaPixel Digital. Halaman token akses untuk pembeli ebook.</p>
     </div>
   </footer>
 
   <script>
-    const ACCESS_KEY = "nexa_access_panduan_baju";
-    const VALID_TOKENS = [
-      "NEXA-BAJU-49K",
-      "NEXA-UMKM-2026"
-    ];
+    const PRODUCTS = {
+      "panduan-baju": {
+        title: "Panduan Mulai Jualan Baju dari Nol",
+        file: "panduan-mulai-jualan-baju-dari-nol.html",
+        token: "NEXA-BAJU-49K",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "kaos-anak": {
+        title: "Ebook Produksi Kaos Anak",
+        file: "ebook-produksi-kaos-anak.html",
+        token: "NEXA-KAOS-ANAK",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "kaos-dewasa": {
+        title: "Ebook Produksi Kaos Dewasa",
+        file: "ebook-produksi-kaos-dewasa.html",
+        token: "NEXA-KAOS-DEWASA",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "edit-desain": {
+        title: "Ebook Cara Edit Gambar Desain Sendiri",
+        file: "ebook-edit-gambar-desain.html",
+        token: "NEXA-EDIT-DESAIN",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "cetak-desain": {
+        title: "Ebook Cetak Desain ke Kaos dan Media Cetak",
+        file: "ebook-cetak-desain-kaos.html",
+        token: "NEXA-CETAK-DESAIN",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "mockup-baju": {
+        title: "Ebook Bikin Mockup Baju",
+        file: "ebook-mockup-baju.html",
+        token: "NEXA-MOCKUP-BAJU",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "foto-produk-ai": {
+        title: "Ebook Foto Produk Pakai AI",
+        file: "ebook-foto-produk-ai.html",
+        token: "NEXA-FOTO-AI",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "foto-produk-tools": {
+        title: "Ebook Foto Produk dengan Photoshop, Canva, dan Kittl",
+        file: "ebook-foto-produk-tools.html",
+        token: "NEXA-FOTO-TOOLS",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "posting-marketplace": {
+        title: "Ebook Cara Posting Produk di Marketplace",
+        file: "ebook-posting-marketplace.html",
+        token: "NEXA-POSTING-MP",
+        checkout: "https://lynk.id/nexapixeldigital"
+      },
+      "iklan-marketplace": {
+        title: "Ebook Cara Atur Iklan Produk di Marketplace",
+        file: "ebook-iklan-marketplace.html",
+        token: "NEXA-IKLAN-MP",
+        checkout: "https://lynk.id/nexapixeldigital"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const productSlug = params.get("produk") || "panduan-baju";
+    const product = PRODUCTS[productSlug] || PRODUCTS["panduan-baju"];
+    const storageKey = "nexa_access_" + productSlug;
 
     function normalizeToken(value) {
       return String(value || "").trim().toUpperCase();
@@ -664,37 +397,37 @@
       const message = document.getElementById("accessMessage");
       const token = normalizeToken(input.value);
 
-      if (VALID_TOKENS.includes(token)) {
-        localStorage.setItem(ACCESS_KEY, "granted");
+      if (token === normalizeToken(product.token)) {
+        localStorage.setItem(storageKey, "granted");
         message.className = "access-message ok";
-        message.textContent = "Token valid. Kamu akan diarahkan ke halaman ebook...";
+        message.textContent = "Token valid. Kamu akan diarahkan ke ebook...";
         setTimeout(function () {
-          window.location.href = "panduan-mulai-jualan-baju-dari-nol.html";
+          window.location.href = product.file;
         }, 700);
       } else {
         message.className = "access-message error";
-        message.textContent = "Token belum valid. Cek lagi penulisannya atau hubungi admin.";
+        message.textContent = "Token belum valid untuk produk ini. Cek lagi penulisannya atau hubungi admin.";
       }
     }
 
-    (function () {
-      const params = new URLSearchParams(window.location.search);
+    function renderPage() {
+      document.title = "Masukkan Token | " + product.title;
+      document.getElementById("productTitle").textContent = product.title;
+      document.getElementById("buyButton").href = product.checkout;
+      document.getElementById("backDetailButton").href = "detail-produk.html?produk=" + encodeURIComponent(productSlug);
+
       if (params.get("locked") === "1") {
-        const alertBox = document.getElementById("lockedAlert");
-        if (alertBox) alertBox.style.display = "block";
-        setTimeout(function () {
-          const access = document.getElementById("akses");
-          if (access) access.scrollIntoView({ behavior: "smooth" });
-        }, 300);
+        document.getElementById("lockedAlert").style.display = "block";
       }
 
       const tokenFromUrl = normalizeToken(params.get("token"));
-      if (VALID_TOKENS.includes(tokenFromUrl)) {
-        localStorage.setItem(ACCESS_KEY, "granted");
-        window.location.href = "panduan-mulai-jualan-baju-dari-nol.html";
+      if (tokenFromUrl && tokenFromUrl === normalizeToken(product.token)) {
+        localStorage.setItem(storageKey, "granted");
+        window.location.href = product.file;
       }
-    })();
-  </script>
+    }
 
+    renderPage();
+  </script>
 </body>
 </html>
