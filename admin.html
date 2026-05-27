@@ -16,7 +16,7 @@
     }
 
     .box {
-      max-width: 760px;
+      max-width: 860px;
       margin: auto;
       background: white;
       padding: 24px;
@@ -66,6 +66,13 @@
     .danger {
       background: #b91c1c;
     }
+
+    .hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 12px;
+    }
   </style>
 </head>
 
@@ -97,7 +104,8 @@
       <input id="title" type="text" placeholder="Contoh: Panduan Mulai Jualan Baju dari Nol" />
 
       <label>Slug</label>
-      <input id="slug" type="text" placeholder="contoh: panduan-mulai-jualan-baju-dari-nol" />
+      <input id="slug" type="text" placeholder="contoh: panduan-baju" />
+      <div class="hint">Slug ini dipakai untuk URL: checkout.html?produk=slug-produk</div>
 
       <label>Subtitle</label>
       <input id="subtitle" type="text" placeholder="Contoh: Ebook UMKM 01" />
@@ -117,11 +125,20 @@
       <label>Cover Image URL</label>
       <input id="cover_url" type="text" placeholder="Link gambar cover" />
 
-      <label>Checkout URL</label>
-      <input id="checkout_url" type="text" placeholder="Link Lynk.id / checkout" />
+      <label>Checkout URL Lynk.id</label>
+      <input id="checkout_url" type="text" placeholder="Contoh: https://lynk.id/nexapixel.id/xxxxx/checkout" />
+      <div class="hint">Isi dengan link bayar Lynk.id. Homepage tetap otomatis masuk ke checkout.html?produk=slug.</div>
 
       <label>Preview URL</label>
       <input id="preview_url" type="text" placeholder="Opsional" />
+
+      <label>Ebook URL / File Ebook</label>
+      <input id="ebook_url" type="text" placeholder="Contoh: panduan-mulai-jualan-baju-dari-nol.html" />
+      <div class="hint">Ini tujuan setelah token valid.</div>
+
+      <label>Access Token</label>
+      <input id="access_token" type="text" placeholder="Contoh: NEXA-BAJU-49K" />
+      <div class="hint">Token yang dikirim ke pembeli setelah bayar.</div>
 
       <label>Publish?</label>
       <select id="is_published">
