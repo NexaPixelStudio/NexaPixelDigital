@@ -33,8 +33,12 @@ function productMatchesCategory(product, categoryValue) {
 
   const map = {
     "digital products": ["digital", "produk digital", "ebook", "template", "file", "download", "course", "kelas"],
+    "ebook": ["ebook", "e-book", "panduan", "guide", "buku digital"],
+    "template": ["template", "planner", "checklist", "worksheet", "dokumen"],
     "fashion": ["fashion", "baju", "kaos", "hoodie", "apparel", "wear", "clothing"],
-    "accessories": ["accessories", "aksesoris", "aksesori", "jam", "tas", "case", "strap"]
+    "accessories": ["accessories", "aksesoris", "aksesori", "jam", "tas", "case", "strap"],
+    "physical products": ["physical", "fisik", "barang", "produk fisik", "merchandise"],
+    "bundle": ["bundle", "paket", "combo", "set"]
   };
 
   const key = normalizeText(categoryValue);
@@ -210,7 +214,7 @@ async function loadPublicProducts() {
     </div>
   `;
 
-  if (!window.supabaseClient) {
+  if (typeof supabaseClient === "undefined" || !supabaseClient) {
     catalogContainer.innerHTML = `
       <div class="empty-state">
         <strong>Koneksi Supabase belum terbaca.</strong>
