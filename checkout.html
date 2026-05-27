@@ -560,9 +560,10 @@
       <p>NexaPixel Digital. Checkout produk ebook digital untuk UMKM, creator, dan seller marketplace.</p>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-client.js"></script>
   <script>
-    const PRODUCTS = {
+    const STATIC_PRODUCTS = {
       "panduan-baju": {
         title: "Panduan Mulai Jualan Baju dari Nol",
         category: "Checkout Ebook UMKM Fashion",
@@ -705,7 +706,70 @@
 
     const params = new URLSearchParams(window.location.search);
     const productSlug = params.get("produk") || "panduan-baju";
-    const product = PRODUCTS[productSlug] || PRODUCTS["panduan-baju"];
+
+    function formatRupiah(value) {
+      const number = Number(value || 0);
+      return "Rp" + number.toLocaleString("id-ID");
+    }
+
+    function safeList(value, fallback) {
+      if (Array.isArray(value) && value.length) return value;
+      if (typeof value === "string" && value.trim()) {
+        return value.split(",").map(item => item.trim()).filter(Boolean);
+      }
+      return fallback;
+    }
+
+    function buildSupabaseProduct(row) {
+      const tags = safeList(row.tags, []);
+      return {
+        title: row.title || "Produk Digital",
+        category: row.category || "Checkout Ebook Digital",
+        subtitle: row.subtitle || "Detail produk digital NexaPixel.",
+        description: row.description || "Produk ini ditambahkan dari admin katalog.",
+        price: formatRupiah(row.price),
+        checkout: row.checkout_url || "#",
+        contents: safeList(tags, [
+          "Materi utama sesuai produk yang dipilih",
+          "Panduan dibuat ringan untuk pemula",
+          "Akses produk menggunakan token"
+        ]),
+        bonuses: [
+          "Akses produk digital setelah token valid",
+          "Link checkout sesuai produk",
+          "Data produk bisa diatur dari admin"
+        ],
+        audience: [
+          "Pemula yang ingin belajar",
+          "UMKM dan seller online",
+          "Creator dan pemilik brand kecil"
+        ]
+      };
+    }
+
+    async function getProduct() {
+      if (STATIC_PRODUCTS[productSlug]) {
+        return STATIC_PRODUCTS[productSlug];
+      }
+
+      if (typeof supabaseClient !== "undefined") {
+        const { data, error } = await supabaseClient
+          .from("products")
+          .select("*")
+          .eq("slug", productSlug)
+          .maybeSingle();
+
+        if (!error && data) {
+          return buildSupabaseProduct(data);
+        }
+
+        if (error) {
+          console.error(error);
+        }
+      }
+
+      return null;
+    }
 
     function renderList(elementId, items) {
       const el = document.getElementById(elementId);
@@ -728,7 +792,7 @@
       });
     }
 
-    function renderProduct() {
+    function renderProduct(product) {
       document.title = "Checkout | " + product.title;
       document.getElementById("productCategory").textContent = product.category;
       document.getElementById("productTitle").textContent = product.title;
@@ -744,12 +808,31 @@
       document.getElementById("tokenButton").href = tokenPage;
       document.getElementById("summaryTokenButton").href = tokenPage;
 
-      renderCards("contentGrid", product.contents);
-      renderList("bonusList", product.bonuses);
-      renderList("audienceList", product.audience);
+      renderCards("contentGrid", product.contents || []);
+      renderList("bonusList", product.bonuses || []);
+      renderList("audienceList", product.audience || []);
     }
 
-    renderProduct();
+    async function initCheckout() {
+      const product = await getProduct();
+
+      if (!product) {
+        document.getElementById("productTitle").textContent = "Produk tidak ditemukan";
+        document.getElementById("productSubtitle").textContent = "Produk ini belum tersedia atau belum dipublish.";
+        document.getElementById("productDescription").textContent = "Silakan kembali ke katalog dan pilih produk lain.";
+        document.getElementById("productPrice").textContent = "Rp0";
+        document.getElementById("buyButton").href = "index.html#produk";
+        document.getElementById("navBuyButton").href = "index.html#produk";
+        document.getElementById("summaryBuyButton").href = "index.html#produk";
+        document.getElementById("tokenButton").href = "index.html#produk";
+        document.getElementById("summaryTokenButton").href = "index.html#produk";
+        return;
+      }
+
+      renderProduct(product);
+    }
+
+    initCheckout();
   </script>
 </body>
 </html>
