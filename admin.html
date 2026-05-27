@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Admin Katalog - NexaPixel Digital</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7fb;
+      margin: 0;
+      padding: 24px;
+      color: #222;
+    }
+
+    .box {
+      max-width: 760px;
+      margin: auto;
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 16px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #111827;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .product-item {
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: #fafafa;
+    }
+
+    .status {
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    .danger {
+      background: #b91c1c;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Admin Katalog</h1>
+    <p>Login dulu untuk tambah ebook baru.</p>
+
+    <div id="status" class="status"></div>
+
+    <div id="loginBox">
+      <h2>Login Owner</h2>
+
+      <label>Email</label>
+      <input id="email" type="email" placeholder="Email owner" />
+
+      <label>Password</label>
+      <input id="password" type="password" placeholder="Password" />
+
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div id="dashboardBox" class="hidden">
+      <button onclick="logout()" class="danger">Logout</button>
+
+      <h2>Tambah Ebook Baru</h2>
+
+      <label>Judul Ebook</label>
+      <input id="title" type="text" placeholder="Contoh: Panduan Mulai Jualan Baju dari Nol" />
+
+      <label>Slug</label>
+      <input id="slug" type="text" placeholder="contoh: panduan-mulai-jualan-baju-dari-nol" />
+
+      <label>Subtitle</label>
+      <input id="subtitle" type="text" placeholder="Contoh: Ebook UMKM 01" />
+
+      <label>Deskripsi</label>
+      <textarea id="description" rows="5" placeholder="Isi deskripsi ebook"></textarea>
+
+      <label>Kategori</label>
+      <input id="category" type="text" placeholder="Contoh: UMKM Fashion" />
+
+      <label>Harga</label>
+      <input id="price" type="number" placeholder="Contoh: 49000" />
+
+      <label>Harga Coret</label>
+      <input id="compare_at_price" type="number" placeholder="Opsional, contoh: 99000" />
+
+      <label>Cover Image URL</label>
+      <input id="cover_url" type="text" placeholder="Link gambar cover" />
+
+      <label>Checkout URL</label>
+      <input id="checkout_url" type="text" placeholder="Link Lynk.id / checkout" />
+
+      <label>Preview URL</label>
+      <input id="preview_url" type="text" placeholder="Opsional" />
+
+      <label>Publish?</label>
+      <select id="is_published">
+        <option value="true">Ya, tampilkan di katalog</option>
+        <option value="false">Belum, simpan draft</option>
+      </select>
+
+      <button onclick="addProduct()">Simpan Produk</button>
+
+      <h2>Daftar Produk</h2>
+      <div id="productList"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-client.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
