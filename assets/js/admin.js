@@ -54,20 +54,32 @@ function makeSlug(text) {
     .replace(/\s+/g, "-");
 }
 
+function getValue(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : "";
+}
+
+function clearValue(id) {
+  const el = document.getElementById(id);
+  if (el) el.value = "";
+}
+
 async function addProduct() {
   const product = {
-    title: document.getElementById("title").value.trim(),
-    slug: document.getElementById("slug").value.trim(),
-    subtitle: document.getElementById("subtitle").value.trim(),
-    description: document.getElementById("description").value.trim(),
-    category: document.getElementById("category").value.trim() || "Ebook",
-    price: Number(document.getElementById("price").value || 0),
-    compare_at_price: document.getElementById("compare_at_price").value
-      ? Number(document.getElementById("compare_at_price").value)
+    title: getValue("title"),
+    slug: getValue("slug"),
+    subtitle: getValue("subtitle"),
+    description: getValue("description"),
+    category: getValue("category") || "Ebook",
+    price: Number(getValue("price") || 0),
+    compare_at_price: getValue("compare_at_price")
+      ? Number(getValue("compare_at_price"))
       : null,
-    cover_url: document.getElementById("cover_url").value.trim(),
-    checkout_url: document.getElementById("checkout_url").value.trim(),
-    preview_url: document.getElementById("preview_url").value.trim(),
+    cover_url: getValue("cover_url"),
+    checkout_url: getValue("checkout_url"),
+    preview_url: getValue("preview_url"),
+    ebook_url: getValue("ebook_url"),
+    access_token: getValue("access_token"),
     is_published: document.getElementById("is_published").value === "true"
   };
 
@@ -89,16 +101,21 @@ async function addProduct() {
 
   showStatus("Produk berhasil disimpan.");
 
-  document.getElementById("title").value = "";
-  document.getElementById("slug").value = "";
-  document.getElementById("subtitle").value = "";
-  document.getElementById("description").value = "";
-  document.getElementById("category").value = "";
-  document.getElementById("price").value = "";
-  document.getElementById("compare_at_price").value = "";
-  document.getElementById("cover_url").value = "";
-  document.getElementById("checkout_url").value = "";
-  document.getElementById("preview_url").value = "";
+  [
+    "title",
+    "slug",
+    "subtitle",
+    "description",
+    "category",
+    "price",
+    "compare_at_price",
+    "cover_url",
+    "checkout_url",
+    "preview_url",
+    "ebook_url",
+    "access_token"
+  ].forEach(clearValue);
+
   document.getElementById("is_published").value = "true";
 
   loadProducts();
@@ -126,13 +143,17 @@ async function loadProducts() {
     <div class="product-item">
       <strong>${product.title}</strong><br>
       <small>${product.is_published ? "Published" : "Draft"}</small><br>
-      <small>Harga: Rp${Number(product.price).toLocaleString("id-ID")}</small><br><br>
+      <small>Slug: ${product.slug || "-"}</small><br>
+      <small>Harga: Rp${Number(product.price).toLocaleString("id-ID")}</small><br>
+      <small>Checkout: ${product.checkout_url || "belum diisi"}</small><br>
+      <small>Ebook: ${product.ebook_url || "belum diisi"}</small><br>
+      <small>Token: ${product.access_token || "belum diisi"}</small><br><br>
 
       <button onclick="togglePublish('${product.id}', ${product.is_published})">
         ${product.is_published ? "Unpublish" : "Publish"}
       </button>
 
-      <button onclick="deleteProduct('${product.id}')">
+      <button onclick="deleteProduct('${product.id}')" class="danger">
         Hapus
       </button>
     </div>
