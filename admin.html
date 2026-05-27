@@ -47,7 +47,7 @@
     <div class="admin-top">
       <div>
         <h1>Admin Produk</h1>
-        <p>Tambah produk digital, produk fisik, template, jasa, atau bundle dari satu tempat.</p>
+        <p>Tambah produk dari dashboard, lalu publish agar tampil di website.</p>
       </div>
       <a href="index.html" class="secondary" style="display:inline-flex; padding:10px 14px; border-radius:999px; text-decoration:none; color:inherit; border:1px solid var(--line); background:#fff;">Lihat Website</a>
     </div>
@@ -67,7 +67,7 @@
       <button onclick="logout()" class="danger">Logout</button>
 
       <h2>Tambah Produk Baru</h2>
-      <p>Untuk produk fisik, kosongkan Ebook URL dan Access Token. Untuk produk digital, isi keduanya.</p>
+      <p>Pilih kategori dari list supaya produk masuk ke kategori yang benar di homepage.</p>
 
       <div class="form-grid">
         <div class="full">
@@ -82,7 +82,12 @@
 
         <div>
           <label>Kategori</label>
-          <input id="category" type="text" placeholder="Contoh: Template Digital, Ebook, Produk Fisik" />
+          <select id="category">
+            <option value="Digital Products">Digital Products</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+          <div class="hint">Pilih salah satu agar kategori di homepage tetap rapi.</div>
         </div>
 
         <div class="full">
