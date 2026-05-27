@@ -318,9 +318,10 @@
       <p>NexaPixel Digital. Halaman token akses untuk pembeli ebook.</p>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-client.js"></script>
   <script>
-    const PRODUCTS = {
+    const STATIC_PRODUCTS = {
       "panduan-baju": {
         title: "Panduan Mulai Jualan Baju dari Nol",
         file: "panduan-mulai-jualan-baju-dari-nol.html",
@@ -385,17 +386,62 @@
 
     const params = new URLSearchParams(window.location.search);
     const productSlug = params.get("produk") || "panduan-baju";
-    const product = PRODUCTS[productSlug] || PRODUCTS["panduan-baju"];
     const storageKey = "nexa_access_" + productSlug;
+    let product = null;
 
     function normalizeToken(value) {
       return String(value || "").trim().toUpperCase();
+    }
+
+    function buildSupabaseProduct(row) {
+      return {
+        title: row.title || "Produk Digital",
+        file: row.ebook_url || row.preview_url || "#",
+        token: row.access_token || row.token || "",
+        checkout: row.checkout_url || "#"
+      };
+    }
+
+    async function getProduct() {
+      if (STATIC_PRODUCTS[productSlug]) {
+        return STATIC_PRODUCTS[productSlug];
+      }
+
+      if (typeof supabaseClient !== "undefined") {
+        const { data, error } = await supabaseClient
+          .from("products")
+          .select("*")
+          .eq("slug", productSlug)
+          .maybeSingle();
+
+        if (!error && data) {
+          return buildSupabaseProduct(data);
+        }
+
+        if (error) {
+          console.error(error);
+        }
+      }
+
+      return null;
     }
 
     function unlockEbook() {
       const input = document.getElementById("accessToken");
       const message = document.getElementById("accessMessage");
       const token = normalizeToken(input.value);
+
+      if (!product) {
+        message.className = "access-message error";
+        message.textContent = "Produk tidak ditemukan. Silakan kembali ke katalog.";
+        return;
+      }
+
+      if (!product.token) {
+        message.className = "access-message error";
+        message.textContent = "Produk ini belum punya token akses. Isi access_token di Supabase atau hubungi admin.";
+        return;
+      }
 
       if (token === normalizeToken(product.token)) {
         localStorage.setItem(storageKey, "granted");
@@ -410,7 +456,19 @@
       }
     }
 
-    function renderPage() {
+    async function renderPage() {
+      product = await getProduct();
+
+      if (!product) {
+        document.title = "Produk tidak ditemukan | NexaPixel Digital";
+        document.getElementById("productTitle").textContent = "Produk tidak ditemukan";
+        document.getElementById("buyButton").href = "index.html#produk";
+        document.getElementById("backDetailButton").href = "index.html#produk";
+        document.getElementById("accessMessage").className = "access-message error";
+        document.getElementById("accessMessage").textContent = "Produk ini belum tersedia atau belum dipublish.";
+        return;
+      }
+
       document.title = "Masukkan Token | " + product.title;
       document.getElementById("productTitle").textContent = product.title;
       document.getElementById("buyButton").href = product.checkout;
@@ -421,7 +479,7 @@
       }
 
       const tokenFromUrl = normalizeToken(params.get("token"));
-      if (tokenFromUrl && tokenFromUrl === normalizeToken(product.token)) {
+      if (tokenFromUrl && product.token && tokenFromUrl === normalizeToken(product.token)) {
         localStorage.setItem(storageKey, "granted");
         window.location.href = product.file;
       }
