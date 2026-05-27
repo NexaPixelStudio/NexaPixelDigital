@@ -3,268 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masukkan Token Ebook | NexaPixel Digital</title>
-  <meta name="description" content="Halaman token akses ebook NexaPixel Digital." />
+  <title>Portal Akses | NexaPixel Digital</title>
+  <meta name="description" content="Portal akses produk digital NexaPixel Digital." />
 
   <style>
     :root {
-      --bg: #fff8ef;
+      --bg: #faf7f2;
       --paper: #ffffff;
-      --cream: #fff1df;
-      --peach: #ffb27d;
-      --orange: #ff7138;
-      --orange-dark: #c94e20;
-      --teal: #2fa99a;
-      --teal-soft: #dff6f2;
-      --brown: #3f291f;
-      --muted: #78685d;
-      --line: #efd8c7;
-      --shadow: 0 20px 60px rgba(118, 71, 41, 0.13);
-      --max: 960px;
+      --ink: #1f1b18;
+      --muted: #756b62;
+      --soft: #f1ebe4;
+      --line: #e5ddd3;
+      --accent: #ff6b35;
+      --accent-dark: #c94e20;
+      --green: #1d8f7a;
+      --green-soft: #eaf7f4;
+      --shadow: 0 18px 48px rgba(74, 52, 37, 0.08);
+      --max: 920px;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: var(--brown);
-      background:
-        radial-gradient(circle at top left, rgba(255, 178, 125, .48) 0, transparent 34%),
-        radial-gradient(circle at top right, rgba(47, 169, 154, .22) 0, transparent 30%),
-        var(--bg);
-      line-height: 1.72;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, rgba(255,107,53,.13), transparent 30%), var(--bg);
+      line-height: 1.65;
       min-height: 100vh;
     }
-
     a { color: inherit; text-decoration: none; }
-
-    p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.14;
-      color: var(--brown);
-    }
-
-    h1 {
-      font-size: clamp(2.15rem, 6vw, 4.4rem);
-      letter-spacing: -0.07em;
-    }
-
-    h2 {
-      font-size: clamp(1.45rem, 4vw, 2.5rem);
-      letter-spacing: -0.045em;
-      margin-bottom: 14px;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 34px));
-      margin: 0 auto;
-    }
+    p { margin: 0 0 14px; color: var(--muted); }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { font-size: clamp(2.1rem, 6vw, 4.3rem); letter-spacing: -0.07em; }
+    .container { width: min(var(--max), calc(100% - 34px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 20;
+      background: rgba(250,247,242,.86);
       backdrop-filter: blur(18px);
-      background: rgba(255, 248, 239, .86);
-      border-bottom: 1px solid rgba(239, 216, 199, .86);
+      border-bottom: 1px solid rgba(229,221,211,.82);
     }
-
     .topbar-inner {
-      min-height: 74px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(135deg, var(--orange), var(--peach));
-      box-shadow: 0 12px 32px rgba(255,113,56,.24);
-    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -0.03em; }
+    .brand-mark { width: 40px; height: 40px; border-radius: 14px; background: var(--ink); color: #fff; display: grid; place-items: center; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 12px 18px;
-      border: 1px solid transparent;
+      min-height: 44px;
+      padding: 11px 16px;
       border-radius: 999px;
-      background: var(--orange);
+      border: 1px solid transparent;
+      background: var(--ink);
       color: #fff;
       font-weight: 850;
-      letter-spacing: -0.015em;
-      box-shadow: 0 14px 32px rgba(255,113,56,.25);
       cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       font: inherit;
     }
+    .btn.accent { background: var(--accent); }
+    .btn.secondary { background: #fff; color: var(--ink); border-color: var(--line); }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #ef622b;
-      box-shadow: 0 18px 42px rgba(255,113,56,.31);
-    }
-
-    .btn.secondary {
-      background: rgba(255,255,255,.78);
-      color: var(--brown);
-      border-color: var(--line);
-      box-shadow: none;
-    }
-
-    .hero {
-      padding: 64px 0 54px;
-    }
-
+    .hero { padding: 58px 0 44px; }
     .access-card {
-      border-radius: 34px;
-      background: linear-gradient(145deg, #fff, #fff1e4 52%, #dff6f2);
       border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,255,255,.84);
       box-shadow: var(--shadow);
-      padding: clamp(24px, 5vw, 48px);
+      padding: clamp(22px, 5vw, 40px);
     }
-
     .pill {
       display: inline-flex;
       width: fit-content;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
+      padding: 7px 11px;
       border-radius: 999px;
-      font-size: .88rem;
-      font-weight: 850;
-      background: var(--cream);
+      background: var(--soft);
       border: 1px solid var(--line);
-      color: var(--orange-dark);
-      margin-bottom: 16px;
-    }
-
-    .product-title {
-      color: var(--orange-dark);
+      color: var(--accent-dark);
       font-weight: 850;
+      font-size: .86rem;
+      margin-bottom: 14px;
     }
-
-    .locked-alert {
-      display: none;
-      margin-bottom: 16px;
-      border-radius: 18px;
-      padding: 14px 16px;
-      background: #fff3df;
-      border: 1px solid #f6c79c;
-      color: var(--brown);
-    }
-
-    .access-form {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
+    .product-title { color: var(--accent-dark); font-weight: 850; }
+    .access-form { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 22px; }
     .access-input {
       width: 100%;
-      min-height: 54px;
+      min-height: 52px;
       border-radius: 999px;
       border: 1px solid var(--line);
       background: #fff;
-      color: var(--brown);
-      padding: 0 18px;
-      outline: none;
+      padding: 0 16px;
       font: inherit;
-      box-shadow: 0 8px 20px rgba(118,71,41,.045);
+      outline: none;
     }
-
-    .access-input:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(255,113,56,.13);
-    }
-
-    .access-message {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .access-message.ok {
-      color: #24786f;
-      font-weight: 780;
-    }
-
-    .access-message.error {
-      color: #b44b25;
-      font-weight: 780;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .note {
-      margin-top: 18px;
-      border-radius: 18px;
-      background: rgba(47,169,154,.12);
-      border: 1px solid #bfe7e0;
-      padding: 14px 16px;
-      color: var(--muted);
-      font-size: .94rem;
-    }
-
-    .footer {
-      padding: 28px 0 52px;
-      text-align: center;
-      color: var(--muted);
-    }
+    .access-message { margin-top: 12px; color: var(--muted); }
+    .access-message.ok { color: var(--green); font-weight: 800; }
+    .access-message.error { color: var(--accent-dark); font-weight: 800; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .note { margin-top: 18px; border-radius: 18px; padding: 13px 15px; background: var(--green-soft); color: var(--muted); border: 1px solid #cfebe5; font-size: .92rem; }
+    .footer { padding: 28px 0 48px; text-align: center; color: var(--muted); }
 
     @media (max-width: 600px) {
-      .topbar-inner {
-        padding: 12px 0;
-        align-items: flex-start;
-      }
-
-      .brand span:last-child {
-        display: none;
-      }
-
-      .access-form {
-        grid-template-columns: 1fr;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
+      .brand span:last-child { display: none; }
+      .access-form { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
+      .actions { flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
@@ -272,220 +125,134 @@
         <span class="brand-mark">✦</span>
         <span>NexaPixel Digital</span>
       </a>
-      <a class="btn secondary" id="backDetailButton" href="#">Detail Produk</a>
+      <a class="btn secondary" id="backDetailButton" href="index.html#produk">Katalog</a>
     </div>
   </header>
 
   <main class="hero">
     <div class="container">
-      <div class="access-card">
-        <div id="lockedAlert" class="locked-alert">
-          Akses ebook belum aktif. Silakan masukkan token yang kamu terima setelah pembayaran.
-        </div>
-
-        <div class="pill">Akses pembeli</div>
-        <h1>Masukkan token ebook</h1>
-        <p>
-          Produk yang akan dibuka: <span class="product-title" id="productTitle">Loading...</span>
-        </p>
-        <p>
-          Token dikirim setelah pembayaran berhasil. Pastikan token yang kamu masukkan sesuai dengan produk yang kamu beli.
-        </p>
+      <div class="access-card" id="portalCard">
+        <div class="pill">Portal akses</div>
+        <h1>Masukkan token produk</h1>
+        <p>Produk yang akan dibuka: <span class="product-title" id="productTitle">Loading...</span></p>
+        <p id="productInfo">Token dipakai untuk membuka produk digital yang sudah dibeli.</p>
 
         <div class="access-form">
           <input class="access-input" id="accessToken" type="text" placeholder="Masukkan token akses" autocomplete="off" />
-          <button class="btn" type="button" onclick="unlockEbook()">Buka Ebook</button>
+          <button class="btn accent" type="button" onclick="unlockProduct()">Buka Akses</button>
         </div>
 
-        <div id="accessMessage" class="access-message">
-          Belum punya token? Kembali ke halaman detail produk, lalu klik tombol beli.
-        </div>
+        <div id="accessMessage" class="access-message">Belum punya token? Kembali ke detail produk lalu klik tombol bayar.</div>
 
         <div class="actions">
           <a class="btn secondary" id="buyButton" href="#">Beli dulu</a>
-          <a class="btn secondary" href="index.html">Kembali ke landing page</a>
+          <a class="btn secondary" href="index.html#produk">Kembali ke katalog</a>
         </div>
 
-        <div class="note">
-          Admin note: token, file ebook, dan link checkout bisa kamu ubah di bagian <strong>PRODUCTS</strong> pada kode halaman ini.
-        </div>
+        <div class="note">Untuk produk fisik, halaman token biasanya tidak diperlukan. Customer cukup lanjut lewat checkout.</div>
       </div>
     </div>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>NexaPixel Digital. Halaman token akses untuk pembeli ebook.</p>
-    </div>
+    <div class="container"><p>NexaPixel Digital. Portal akses produk digital.</p></div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/supabase-client.js"></script>
   <script>
-    const STATIC_PRODUCTS = {
-      "panduan-baju": {
-        title: "Panduan Mulai Jualan Baju dari Nol",
-        file: "panduan-mulai-jualan-baju-dari-nol.html",
-        token: "NEXA-BAJU-49K",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "kaos-anak": {
-        title: "Ebook Produksi Kaos Anak",
-        file: "ebook-produksi-kaos-anak.html",
-        token: "NEXA-KAOS-ANAK",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "kaos-dewasa": {
-        title: "Ebook Produksi Kaos Dewasa",
-        file: "ebook-produksi-kaos-dewasa.html",
-        token: "NEXA-KAOS-DEWASA",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "edit-desain": {
-        title: "Ebook Cara Edit Gambar Desain Sendiri",
-        file: "ebook-edit-gambar-desain.html",
-        token: "NEXA-EDIT-DESAIN",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "cetak-desain": {
-        title: "Ebook Cetak Desain ke Kaos dan Media Cetak",
-        file: "ebook-cetak-desain-kaos.html",
-        token: "NEXA-CETAK-DESAIN",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "mockup-baju": {
-        title: "Ebook Bikin Mockup Baju",
-        file: "ebook-mockup-baju.html",
-        token: "NEXA-MOCKUP-BAJU",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "foto-produk-ai": {
-        title: "Ebook Foto Produk Pakai AI",
-        file: "ebook-foto-produk-ai.html",
-        token: "NEXA-FOTO-AI",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "foto-produk-tools": {
-        title: "Ebook Foto Produk dengan Photoshop, Canva, dan Kittl",
-        file: "ebook-foto-produk-tools.html",
-        token: "NEXA-FOTO-TOOLS",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "posting-marketplace": {
-        title: "Ebook Cara Posting Produk di Marketplace",
-        file: "ebook-posting-marketplace.html",
-        token: "NEXA-POSTING-MP",
-        checkout: "https://lynk.id/nexapixeldigital"
-      },
-      "iklan-marketplace": {
-        title: "Ebook Cara Atur Iklan Produk di Marketplace",
-        file: "ebook-iklan-marketplace.html",
-        token: "NEXA-IKLAN-MP",
-        checkout: "https://lynk.id/nexapixeldigital"
-      }
-    };
-
     const params = new URLSearchParams(window.location.search);
-    const productSlug = params.get("produk") || "panduan-baju";
-    const storageKey = "nexa_access_" + productSlug;
+    const productSlug = params.get("produk") || "";
     let product = null;
 
     function normalizeToken(value) {
       return String(value || "").trim().toUpperCase();
     }
 
-    function buildSupabaseProduct(row) {
-      return {
-        title: row.title || "Produk Digital",
-        file: row.ebook_url || row.preview_url || "#",
-        token: row.access_token || row.token || "",
-        checkout: row.checkout_url || "#"
-      };
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
     }
 
     async function getProduct() {
-      if (STATIC_PRODUCTS[productSlug]) {
-        return STATIC_PRODUCTS[productSlug];
+      if (!productSlug) return null;
+
+      const { data, error } = await supabaseClient
+        .from("products")
+        .select("*")
+        .eq("slug", productSlug)
+        .eq("is_published", true)
+        .maybeSingle();
+
+      if (error) {
+        console.error(error);
+        return null;
       }
 
-      if (typeof supabaseClient !== "undefined") {
-        const { data, error } = await supabaseClient
-          .from("products")
-          .select("*")
-          .eq("slug", productSlug)
-          .maybeSingle();
-
-        if (!error && data) {
-          return buildSupabaseProduct(data);
-        }
-
-        if (error) {
-          console.error(error);
-        }
-      }
-
-      return null;
+      return data;
     }
 
-    function unlockEbook() {
-      const input = document.getElementById("accessToken");
+    function setMessage(text, type) {
       const message = document.getElementById("accessMessage");
+      message.className = "access-message " + (type || "");
+      message.textContent = text;
+    }
+
+    function unlockProduct() {
+      if (!product) {
+        setMessage("Produk tidak ditemukan.", "error");
+        return;
+      }
+
+      if (!product.access_token || !product.ebook_url) {
+        setMessage("Produk ini belum memakai akses token digital. Cek detail produk atau hubungi admin.", "error");
+        return;
+      }
+
+      const input = document.getElementById("accessToken");
       const token = normalizeToken(input.value);
 
-      if (!product) {
-        message.className = "access-message error";
-        message.textContent = "Produk tidak ditemukan. Silakan kembali ke katalog.";
-        return;
-      }
-
-      if (!product.token) {
-        message.className = "access-message error";
-        message.textContent = "Produk ini belum punya token akses. Isi access_token di Supabase atau hubungi admin.";
-        return;
-      }
-
-      if (token === normalizeToken(product.token)) {
-        localStorage.setItem(storageKey, "granted");
-        message.className = "access-message ok";
-        message.textContent = "Token valid. Kamu akan diarahkan ke ebook...";
+      if (token === normalizeToken(product.access_token)) {
+        localStorage.setItem("nexa_access_" + productSlug, "granted");
+        setMessage("Token valid. Kamu akan diarahkan ke produk...", "ok");
         setTimeout(function () {
-          window.location.href = product.file;
-        }, 700);
+          window.location.href = product.ebook_url;
+        }, 650);
       } else {
-        message.className = "access-message error";
-        message.textContent = "Token belum valid untuk produk ini. Cek lagi penulisannya atau hubungi admin.";
+        setMessage("Token belum valid untuk produk ini. Cek lagi penulisannya.", "error");
       }
     }
 
-    async function renderPage() {
+    async function init() {
       product = await getProduct();
+      const title = document.getElementById("productTitle");
+      const buyButton = document.getElementById("buyButton");
+      const backButton = document.getElementById("backDetailButton");
+
+      backButton.href = "checkout.html?produk=" + encodeURIComponent(productSlug);
 
       if (!product) {
-        document.title = "Produk tidak ditemukan | NexaPixel Digital";
-        document.getElementById("productTitle").textContent = "Produk tidak ditemukan";
-        document.getElementById("buyButton").href = "index.html#produk";
-        document.getElementById("backDetailButton").href = "index.html#produk";
-        document.getElementById("accessMessage").className = "access-message error";
-        document.getElementById("accessMessage").textContent = "Produk ini belum tersedia atau belum dipublish.";
+        title.textContent = "Produk tidak ditemukan";
+        document.getElementById("productInfo").textContent = "Produk ini belum dipublish, slug salah, atau sudah dihapus dari admin.";
+        buyButton.href = "index.html#produk";
+        buyButton.textContent = "Kembali ke katalog";
         return;
       }
 
-      document.title = "Masukkan Token | " + product.title;
-      document.getElementById("productTitle").textContent = product.title;
-      document.getElementById("buyButton").href = product.checkout;
-      document.getElementById("backDetailButton").href = "checkout.html?produk=" + encodeURIComponent(productSlug);
+      document.title = "Portal Akses | " + product.title;
+      title.textContent = product.title || "Produk";
+      buyButton.href = product.checkout_url || "checkout.html?produk=" + encodeURIComponent(productSlug);
 
-      if (params.get("locked") === "1") {
-        document.getElementById("lockedAlert").style.display = "block";
-      }
-
-      const tokenFromUrl = normalizeToken(params.get("token"));
-      if (tokenFromUrl && product.token && tokenFromUrl === normalizeToken(product.token)) {
-        localStorage.setItem(storageKey, "granted");
-        window.location.href = product.file;
+      if (!product.access_token || !product.ebook_url) {
+        document.getElementById("productInfo").textContent = "Produk ini tidak memakai token digital. Silakan lanjutkan pembelian dari halaman detail produk.";
       }
     }
 
-    renderPage();
+    init();
   </script>
 </body>
 </html>
