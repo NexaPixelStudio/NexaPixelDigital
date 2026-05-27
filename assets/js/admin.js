@@ -63,6 +63,18 @@ async function logout() {
   checkSession();
 }
 
+function ensureCategoryOption(category) {
+  const select = document.getElementById("category");
+  if (!select || !category) return;
+  const exists = Array.from(select.options).some(option => option.value === category);
+  if (!exists) {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    select.appendChild(option);
+  }
+}
+
 function getProductPayload() {
   const tags = value("tags")
     .split(",")
@@ -74,7 +86,7 @@ function getProductPayload() {
     slug: value("slug"),
     subtitle: value("subtitle"),
     description: value("description"),
-    category: value("category") || "Produk",
+    category: value("category") || "Digital Products",
     tags,
     price: Number(value("price") || 0),
     compare_at_price: value("compare_at_price") ? Number(value("compare_at_price")) : null,
@@ -121,6 +133,7 @@ function resetForm() {
     "title", "slug", "subtitle", "description", "category", "price", "compare_at_price",
     "tags", "cover_url", "checkout_url", "ebook_url", "access_token", "sort_order"
   ].forEach(id => setValue(id, ""));
+  setValue("category", "Digital Products");
   setValue("is_published", "true");
   saveButton.textContent = "Simpan Produk";
   cancelEditButton.style.display = "none";
@@ -135,7 +148,8 @@ function editProduct(id) {
   setValue("slug", product.slug);
   setValue("subtitle", product.subtitle);
   setValue("description", product.description);
-  setValue("category", product.category);
+  ensureCategoryOption(product.category);
+  setValue("category", product.category || "Digital Products");
   setValue("price", product.price);
   setValue("compare_at_price", product.compare_at_price);
   setValue("tags", Array.isArray(product.tags) ? product.tags.join(", ") : "");
