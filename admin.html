@@ -3,150 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Admin Katalog - NexaPixel Digital</title>
+  <title>Admin Produk | NexaPixel Digital</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f7fb;
-      margin: 0;
-      padding: 24px;
-      color: #222;
+    :root {
+      --bg: #faf7f2;
+      --paper: #ffffff;
+      --ink: #1f1b18;
+      --muted: #756b62;
+      --line: #e5ddd3;
+      --accent: #ff6b35;
+      --danger: #b91c1c;
+      --soft: #f1ebe4;
+      --shadow: 0 18px 48px rgba(74,52,37,.08);
     }
-
-    .box {
-      max-width: 860px;
-      margin: auto;
-      background: white;
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-
-    input, textarea, select, button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0 16px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    button {
-      background: #111827;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .product-item {
-      padding: 12px;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      background: #fafafa;
-    }
-
-    .status {
-      margin-bottom: 16px;
-      color: #555;
-    }
-
-    .danger {
-      background: #b91c1c;
-    }
-
-    .hint {
-      font-size: 13px;
-      color: #666;
-      margin-top: -10px;
-      margin-bottom: 12px;
-    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; background: var(--bg); color: var(--ink); padding: 24px; }
+    .box { max-width: 980px; margin: auto; background: rgba(255,255,255,.88); border: 1px solid var(--line); padding: 24px; border-radius: 24px; box-shadow: var(--shadow); }
+    h1, h2, h3 { margin: 0 0 10px; letter-spacing: -0.04em; }
+    p { color: var(--muted); margin: 0 0 16px; }
+    label { display: block; font-weight: 780; margin-bottom: 6px; }
+    input, textarea, select, button { width: 100%; padding: 12px; margin: 0 0 16px; border-radius: 12px; border: 1px solid var(--line); font-size: 14px; box-sizing: border-box; font: inherit; }
+    textarea { min-height: 110px; resize: vertical; }
+    button { background: var(--ink); color: #fff; border: none; cursor: pointer; font-weight: 850; }
+    button:hover { opacity: .94; }
+    .hidden { display: none; }
+    .status { margin-bottom: 16px; color: var(--muted); }
+    .danger { background: var(--danger); }
+    .secondary { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+    .hint { font-size: .88rem; color: var(--muted); margin-top: -10px; margin-bottom: 14px; }
+    .product-item { padding: 14px; border: 1px solid var(--line); border-radius: 16px; margin-bottom: 12px; background: #fff; }
+    .product-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .product-actions button { width: auto; margin: 0; padding: 9px 12px; }
+    .admin-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .admin-top button { width: auto; margin: 0; }
+    @media (max-width: 720px) { body { padding: 14px; } .form-grid { grid-template-columns: 1fr; } .admin-top { display: block; } .admin-top button { width: 100%; margin-top: 10px; } }
   </style>
 </head>
-
 <body>
   <div class="box">
-    <h1>Admin Katalog</h1>
-    <p>Login dulu untuk tambah ebook baru.</p>
+    <div class="admin-top">
+      <div>
+        <h1>Admin Produk</h1>
+        <p>Tambah produk digital, produk fisik, template, jasa, atau bundle dari satu tempat.</p>
+      </div>
+      <a href="index.html" class="secondary" style="display:inline-flex; padding:10px 14px; border-radius:999px; text-decoration:none; color:inherit; border:1px solid var(--line); background:#fff;">Lihat Website</a>
+    </div>
 
     <div id="status" class="status"></div>
 
     <div id="loginBox">
       <h2>Login Owner</h2>
-
       <label>Email</label>
       <input id="email" type="email" placeholder="Email owner" />
-
       <label>Password</label>
       <input id="password" type="password" placeholder="Password" />
-
       <button onclick="login()">Login</button>
     </div>
 
     <div id="dashboardBox" class="hidden">
       <button onclick="logout()" class="danger">Logout</button>
 
-      <h2>Tambah Ebook Baru</h2>
+      <h2>Tambah Produk Baru</h2>
+      <p>Untuk produk fisik, kosongkan Ebook URL dan Access Token. Untuk produk digital, isi keduanya.</p>
 
-      <label>Judul Ebook</label>
-      <input id="title" type="text" placeholder="Contoh: Panduan Mulai Jualan Baju dari Nol" />
+      <div class="form-grid">
+        <div class="full">
+          <label>Nama Produk</label>
+          <input id="title" type="text" placeholder="Contoh: Template Invoice UMKM" />
+        </div>
 
-      <label>Slug</label>
-      <input id="slug" type="text" placeholder="contoh: panduan-baju" />
-      <div class="hint">Slug ini dipakai untuk URL: checkout.html?produk=slug-produk</div>
+        <div>
+          <label>Slug</label>
+          <input id="slug" type="text" placeholder="contoh: template-invoice-umkm" />
+        </div>
 
-      <label>Subtitle</label>
-      <input id="subtitle" type="text" placeholder="Contoh: Ebook UMKM 01" />
+        <div>
+          <label>Kategori</label>
+          <input id="category" type="text" placeholder="Contoh: Template Digital, Ebook, Produk Fisik" />
+        </div>
 
-      <label>Deskripsi</label>
-      <textarea id="description" rows="5" placeholder="Isi deskripsi ebook"></textarea>
+        <div class="full">
+          <label>Subtitle / Label Singkat</label>
+          <input id="subtitle" type="text" placeholder="Contoh: File digital siap pakai" />
+        </div>
 
-      <label>Kategori</label>
-      <input id="category" type="text" placeholder="Contoh: UMKM Fashion" />
+        <div class="full">
+          <label>Deskripsi</label>
+          <textarea id="description" placeholder="Isi deskripsi produk"></textarea>
+        </div>
 
-      <label>Harga</label>
-      <input id="price" type="number" placeholder="Contoh: 49000" />
+        <div>
+          <label>Harga</label>
+          <input id="price" type="number" placeholder="Contoh: 49000" />
+        </div>
 
-      <label>Harga Coret</label>
-      <input id="compare_at_price" type="number" placeholder="Opsional, contoh: 99000" />
+        <div>
+          <label>Harga Coret</label>
+          <input id="compare_at_price" type="number" placeholder="Opsional, contoh: 99000" />
+        </div>
 
-      <label>Cover Image URL</label>
-      <input id="cover_url" type="text" placeholder="Link gambar cover" />
+        <div class="full">
+          <label>Tags</label>
+          <input id="tags" type="text" placeholder="Pisahkan dengan koma, contoh: Digital, UMKM, Template" />
+        </div>
 
-      <label>Checkout URL Lynk.id</label>
-      <input id="checkout_url" type="text" placeholder="Contoh: https://lynk.id/nexapixel.id/xxxxx/checkout" />
-      <div class="hint">Isi dengan link bayar Lynk.id. Homepage tetap otomatis masuk ke checkout.html?produk=slug.</div>
+        <div class="full">
+          <label>Cover Image URL</label>
+          <input id="cover_url" type="text" placeholder="Link gambar cover produk" />
+        </div>
 
-      <label>Preview URL</label>
-      <input id="preview_url" type="text" placeholder="Opsional" />
+        <div class="full">
+          <label>Checkout URL</label>
+          <input id="checkout_url" type="text" placeholder="Link Lynk.id atau halaman pembayaran" />
+          <div class="hint">Isi ini untuk semua produk, baik digital maupun fisik.</div>
+        </div>
 
-      <label>Ebook URL / File Ebook</label>
-      <input id="ebook_url" type="text" placeholder="Contoh: panduan-mulai-jualan-baju-dari-nol.html" />
-      <div class="hint">Ini tujuan setelah token valid.</div>
+        <div class="full">
+          <label>Ebook URL / File Digital URL</label>
+          <input id="ebook_url" type="text" placeholder="Opsional. Isi kalau produk digital, contoh: file-ebook.html atau link PDF" />
+        </div>
 
-      <label>Access Token</label>
-      <input id="access_token" type="text" placeholder="Contoh: NEXA-BAJU-49K" />
-      <div class="hint">Token yang dikirim ke pembeli setelah bayar.</div>
+        <div class="full">
+          <label>Access Token</label>
+          <input id="access_token" type="text" placeholder="Opsional. Isi kalau produk digital, contoh: NEXA-PRODUK-123" />
+        </div>
 
-      <label>Publish?</label>
-      <select id="is_published">
-        <option value="true">Ya, tampilkan di katalog</option>
-        <option value="false">Belum, simpan draft</option>
-      </select>
+        <div>
+          <label>Urutan Produk</label>
+          <input id="sort_order" type="number" placeholder="Contoh: 1" />
+        </div>
 
-      <button onclick="addProduct()">Simpan Produk</button>
+        <div>
+          <label>Publish?</label>
+          <select id="is_published">
+            <option value="true">Ya, tampilkan di katalog</option>
+            <option value="false">Belum, simpan draft</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="saveProduct()" id="saveButton">Simpan Produk</button>
+      <button onclick="resetForm()" class="secondary" id="cancelEditButton" style="display:none;">Batal Edit</button>
 
       <h2>Daftar Produk</h2>
       <div id="productList"></div>
